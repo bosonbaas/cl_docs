@@ -1,6 +1,6 @@
 # Types
 
-CL supports a variety of data types. One non-primitive data type is `List<Type>`, which is parameterized by other data types (including, potentially, more lists).
+CL supports a variety of data types. One non-primitive data type is `List<Type>`, which is parameterized by other data types (including, potentially, more lists). For a nice overview of CL types, take a look at what the official docs have to say about them ([classroom.amplify.com/computation-layer/documentation#types](https://classroom.amplify.com/computation-layer/documentation#types)).
 
 > **NEEDS WORK**: The list of types presented below are far from comprehensive, and could be further filled out.
 
