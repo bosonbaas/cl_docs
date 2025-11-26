@@ -1,6 +1,18 @@
 # Lists
 
-Lists in CL can be explicitly defined by providing a comma-separated list of elements. Note, all elements of a list in CL must be of the _same_ datatype. Elements of lists can be lists themselves but, once again, they must all be the same _type_ of list. For example, we can define a list of `number`s
+Lists in CL can be explicitly defined by providing a comma-separated list of elements. Note, all elements of a list in CL must be of the _same_ datatype. Elements of lists can be lists themselves but, once again, they must all be the same _type_ of list. For example, we can define a list of `number`s as:
+
+```desmoscl
+num_list = [1, 2, 3, 4]
+```
+
+but we would run into an error if we tried to add a string onto it like
+
+```desmoscl
+num_list = [1, 2, 3, 4, "a"]
+```
+
+> **WARNING**: Lists operations are currently a beta feature, so be careful while using them. For advanced list usage, take a look at the Desmos CL forums [here](https://cl.desmos.com).
 
 ## List Operations
 
