@@ -1,6 +1,6 @@
 # The Unofficial Desmos CL Documentation
 
-Welcome to the Unofficial Desmos CL Documentation, the community-made source for tips and tricks about using Desmos CL! The purpose of this website is to provide a space where the amazing information provided on the CL forum ((cl.desmos.com)[https://cl.desmos.com]).
+Welcome to the Unofficial Desmos CL Documentation, the community-made source for tips and tricks about using Desmos CL! The purpose of this website is to provide a space where the amazing information provided on the CL forum ([cl.desmos.com](https://cl.desmos.com)).
 
 ## Contributing
 
@@ -17,12 +17,13 @@ In order to maintain the quality of the content on this website, there are a few
 
 ### Building the Docs
 
-This documentation is constructed with (MkDocs)[https://www.mkdocs.org/]. Additionally, the interactive Pattern playground uses (CodeMirror)[https://codemirror.net/] for the UI and (Lezer)[https://lezer.codemirror.net/] for input parsing. Thus, building the docs requires both building the editor library and building the docs.
+This documentation is constructed with [MkDocs](https://www.mkdocs.org/). Additionally, the interactive Pattern playground uses [CodeMirror](https://codemirror.net/) for the UI and [Lezer](https://lezer.codemirror.net/) for input parsing. Thus, building the docs requires both building the editor library and building the docs.
 
 1. Clone this repository.
-2. (Install MkDocs)[https://www.mkdocs.org/user-guide/installation/]
-3. (Install NPM)[https://docs.npmjs.com/downloading-and-installing-node-js-and-npm]
+2. [Install MkDocs](https://www.mkdocs.org/user-guide/installation/)
+3. [Install NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 4. Build the Editor library
    1. In the directory `editor/`, run `npm i`
    2. Run `npm run build`
 5. In the root director, run `mkdocs serve`
+
