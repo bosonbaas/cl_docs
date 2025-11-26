@@ -19,9 +19,6 @@ plugins:
   - macros
 
 markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      use_pygments: false
   - footnotes
   - toc:
       permalink: "#"

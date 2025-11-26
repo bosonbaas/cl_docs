@@ -72,7 +72,7 @@ def define_env(env):
                 # Additionally escapes backticks (`) in code segments
                 # Currently only works for ```desmoscl code ``` formatted code. Regex can fix that
                 desc = d["description"]
-                matches = re.findall("```desmoscl(?:(?!```)[\s\S])*```", desc) 
+                matches = re.findall(r"```desmoscl(?:(?!```)[\s\S])*```", desc)
                 for m in matches:
                     desc = desc.replace(m, "```desmoscl"+m[11:-3].replace("`", "\\`")+"```")
                 desc = desc.replace("```desmoscl", "<pre class=\"desmoscl\"><code>")
