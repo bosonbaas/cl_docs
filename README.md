@@ -27,3 +27,6 @@ This documentation is constructed with [MkDocs](https://www.mkdocs.org/). Additi
    2. Run `npm run build`
 5. In the root director, run `mkdocs serve`
 
+## Disclaimer
+
+> Visit Amplify Classroom for free lessons, lesson-building tools, and Polypad virtual manipulatives at amplifycom.wpengine.com/classroom. This content is not affiliated with, sponsored by, or endorsed by Amplify or any of its licensors. Amplify®, Amplify Classroom™, and related trademarks are the property of Amplify Education, Inc.

@@ -5,7 +5,7 @@ This site is an unofficial reference for the Desmos CL syntax, intended to be up
 What you'll find here:
 
 - Reference material that clarifies how CL expressions and state work.
-- Tips, patterns, and troubleshooting notes from my own (and other contributors) experience workign with CL.
+- Tips, patterns, and troubleshooting notes from my own (and other contributors) experience working with CL.
 
 This is intended as a reference for those already familiar with Desmos CL. If you're just starting, I'd encourage you to take a look at the official Desmos CL documentation [here](https://classroom.amplify.com/computation-layer/documentation)
 
