@@ -96,17 +96,21 @@
 <p>A great introduction to the Amplify Activity editing environment and CL programming language can be found in the <a href="https://classroom.amplify.com/computation-layer/documentation#getting-started">Amplify CL Documentation</a>. Below is a brief summary of the syntax, which will hopefully eventually be filled out more comprehensively</p>
 <h2 id="sinks-and-sources">Sinks and Sources<a class="headerlink" href="#sinks-and-sources" title="Permanent link">#</a></h2>
 <p>There are two ways to interact with CL components, and those are through <em>sinks</em> and <em>sources</em>. Sinks are the way that you set attributes of a component (e.g. the text in a Note, or the drawings in a Sketch), and sources are the ways that you read from a component. The syntax for setting the value of a sink is as follows:</p>
-<pre class="highlight"><code class="language-desmoscl">sink_name: sink_value</code></pre>
+<pre><code class="language-desmoscl">sink_name: sink_value
+</code></pre>
 <p>Note that this will set the sink of the component whose CL code you are actively editing. Note that, sometimes, <code>sink_name</code> will be followed by parentheses containing some argument (for example, the <code>itemContent</code> source of the Ordered List component).</p>
 <p>If we want to access the value of a source from a component, we can do that at any place in the activity using the syntax:</p>
-<pre class="highlight"><code class="language-desmoscl">component_name.source_name</code></pre>
+<pre><code class="language-desmoscl">component_name.source_name
+</code></pre>
 <p>For example, let's say that we have a Note component in which we want to display the answer a student put into a Math Response component called <code>math_resp</code>. In the Note component, we would write:</p>
-<pre class="highlight"><code class="language-desmoscl">content: math_resp.latex</code></pre>
+<pre><code class="language-desmoscl">content: math_resp.latex
+</code></pre>
 <p>This sets the <code>content</code> sink of the Note to the value of the <code>latex</code> source in the Math Response component.</p>
 <p>For a more comprehensive list of sinks and sources corresponding to each component, take a look at the <a href="../components/">Components page</a></p>
 <h2 id="variable-assignment">Variable Assignment<a class="headerlink" href="#variable-assignment" title="Permanent link">#</a></h2>
 <p>In addition to sinks and sources, CL also allows you to define variables in the CL editor to store values. The basic format for this is:</p>
-<pre class="highlight"><code class="language-desmoscl">variable_name = variable_value</code></pre>
+<pre><code class="language-desmoscl">variable_name = variable_value
+</code></pre>
 <p>This can be incredibly useful to break up redundancy in your CL code and to make things more readable.</p>
               
             </div>

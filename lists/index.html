@@ -158,12 +158,15 @@
 <h2 id="list-operations">List Operations<a class="headerlink" href="#list-operations" title="Permanent link">#</a></h2>
 <p>List operations are described in-detail <a href="https://cl.desmos.com/t/list-functions-in-cl/7353">here</a>. Below is a cheat-sheet, as well as some worked examples I've found useful.</p>
 <p>As a note, the first few of these functions take in an <strong>arrow function</strong> as an argument. Arrow functions are functions which <em>you</em> define, and which (in CL) can only be defined <em>inline</em> (that is, in the function call itself). An example of an arrow function is:</p>
-<pre class="highlight"><code>(x) =&gt; numericValue(`${x}+1`)</code></pre>
+<pre><code>(x) =&gt; numericValue(`${x}+1`)
+</code></pre>
 <p>This function would take in an argument (<code>x</code>), and return <code>x+1</code> (though the CL syntax makes that a little ... unwieldly). So if we were to use this in the CL <code>map</code> function (which applies the arrow function to every element of an list) we would have:</p>
-<pre class="highlight"><code>test = [1,2,3,4].map((x) =&gt; numericValue(`${x}+1`))
-# This stores [2,3,4,5] in the "test" variable</code></pre>
+<pre><code>test = [1,2,3,4].map((x) =&gt; numericValue(`${x}+1`))
+# This stores [2,3,4,5] in the &quot;test&quot; variable
+</code></pre>
 <h3 id="listsmap">Lists.map()<a class="headerlink" href="#listsmap" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.map(func::ArrowFunction)::List</code></pre>
+<pre><code class="language-desmoscl">list.map(func::ArrowFunction)::List
+</code></pre>
 <p>This function returns a list containing the result of calling the arrow function <code>func</code> on each element of the original list. The arrow function <code>func</code> can be defined with either 0, 1, or 2 arguments. Note that CL doesn't care what you call the arguments in your arrow function definition, just how many arguments there are and their positions.</p>
 <ul>
 <li>0 arguments <code>() =&gt; ...</code>: The function accepts no arguments.</li>
@@ -174,23 +177,27 @@
 <ul>
 <li>Creating a list full of zeros the same size as another list (maybe keeping score in a game).</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">players = ["Student1", "Student2", "Student3"]
-score = players.map(() =&gt; 0)</code></pre>
+<pre><code class="language-desmoscl">players = [&quot;Student1&quot;, &quot;Student2&quot;, &quot;Student3&quot;]
+score = players.map(() =&gt; 0)
+</code></pre>
 <ul>
 <li>Applying a function to a list of student-defined x-values.</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">x_coords = [1, 2, 3, 5, 8, 9, -1, -2]
+<pre><code class="language-desmoscl">x_coords = [1, 2, 3, 5, 8, 9, -1, -2]
 y_coords = x_coords.map((x) =&gt; numericValue(`${x}^2`))
 # Note that even though we call the single argument 'x', it will
-# still be the respective element of the 'x_coords' list.</code></pre>
+# still be the respective element of the 'x_coords' list.
+</code></pre>
 <ul>
 <li>Multiplying two lists element-wise.</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">list_1 = [5, 3, 7, 12, 3]
+<pre><code class="language-desmoscl">list_1 = [5, 3, 7, 12, 3]
 list_2 = [-1, 1, 0, 2, 4]
-list_3 = list_1.map((x, i) =&gt; numericValue(`$(x) * $(list_2[i])))</code></pre>
+list_3 = list_1.map((x, i) =&gt; numericValue(`$(x) * $(list_2[i])))
+</code></pre>
 <h3 id="listsfilter">Lists.filter()<a class="headerlink" href="#listsfilter" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.filter(func::ArrowFunction)::List</code></pre>
+<pre><code class="language-desmoscl">list.filter(func::ArrowFunction)::List
+</code></pre>
 <p>This function returns a list containing only the elements of <code>list</code> which return <code>true</code> when passed to <code>func</code>. The arrow function <code>func</code> can be defined with either 1 or 2 arguments. <code>func</code> should return either <code>true</code> or <code>false</code>.</p>
 <ul>
 <li>1 argument <code>(element) =&gt; ...</code>: The function takes in one argument: the respective element of the original list.</li>
@@ -200,9 +207,11 @@ list_3 = list_1.map((x, i) =&gt; numericValue(`$(x) * $(list_2[i])))</code></pre
 <ul>
 <li>Identifying the first even value of a list.</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl"></code></pre>
+<pre><code class="language-desmoscl">
+</code></pre>
 <h3 id="listsfirst">Lists.first()<a class="headerlink" href="#listsfirst" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.first(func::ArrowFunction)::Type</code></pre>
+<pre><code class="language-desmoscl">list.first(func::ArrowFunction)::Type
+</code></pre>
 <p>This function is similar to <code>filter</code>, but only returns the first element of <code>list</code> which returns <code>true</code> when passed to <code>func</code>. The arrow function <code>func</code> can be defined with either 1 or 2 arguments. <code>func</code> should return either <code>true</code> or <code>false</code>.</p>
 <ul>
 <li>1 argument <code>(element) =&gt; ...</code>: The function takes in one argument: the respective element of the original list.</li>
@@ -210,14 +219,16 @@ list_3 = list_1.map((x, i) =&gt; numericValue(`$(x) * $(list_2[i])))</code></pre
 </ul>
 <h4 id="use-cases_2">Use-Cases<a class="headerlink" href="#use-cases_2" title="Permanent link">#</a></h4>
 <ul>
-<li>Find the first value greater than 2 in a list. <sup id="fnref:7789"><a class="footnote-ref" href="#fn:7789">1</a></sup></li>
+<li>Find the first value greater than 2 in a list. <sup id="fnref:2261"><a class="footnote-ref" href="#fn:2261">1</a></sup></li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1,3,5,6,7]
+<pre><code class="language-desmoscl">values = [1,3,5,6,7]
 
 first_gt_2 = values.first((e) =&gt; e &gt; 2)
-# first_gt_2 should equal 3.</code></pre>
+# first_gt_2 should equal 3.
+</code></pre>
 <h3 id="listsall">Lists.all()<a class="headerlink" href="#listsall" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.all(func::ArrowFunction)::boolean</code></pre>
+<pre><code class="language-desmoscl">list.all(func::ArrowFunction)::boolean
+</code></pre>
 <p>This function returns <code>true</code> if <code>func</code> returns <code>true</code> for all elements in the list, and <code>false</code> otherwise. The arrow function <code>func</code> can be defined with either 1 or 2 arguments. <code>func</code> should return either <code>true</code> or <code>false</code>.</p>
 <ul>
 <li>1 argument <code>(element) =&gt; ...</code>: The function takes in one argument: the respective element of the original list.</li>
@@ -225,14 +236,16 @@ first_gt_2 = values.first((e) =&gt; e &gt; 2)
 </ul>
 <h4 id="use-cases_3">Use-Cases<a class="headerlink" href="#use-cases_3" title="Permanent link">#</a></h4>
 <ul>
-<li>Evaluate if all elements of a list are greater than 2 <sup id="fnref2:7789"><a class="footnote-ref" href="#fn:7789">1</a></sup></li>
+<li>Evaluate if all elements of a list are greater than 2 <sup id="fnref2:2261"><a class="footnote-ref" href="#fn:2261">1</a></sup></li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1,3,5,6,7]
+<pre><code class="language-desmoscl">values = [1,3,5,6,7]
 
 all_gt_2 = values.all((e) =&gt; e &gt; 2)
-# all_gt_2 should be false</code></pre>
+# all_gt_2 should be false
+</code></pre>
 <h3 id="listsany">Lists.any()<a class="headerlink" href="#listsany" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.any(func::ArrowFunction)::boolean</code></pre>
+<pre><code class="language-desmoscl">list.any(func::ArrowFunction)::boolean
+</code></pre>
 <p>This function returns <code>true</code> if <code>func</code> returns <code>true</code> for any elements in the list, and <code>false</code> otherwise. The arrow function <code>func</code> can be defined with either 1 or 2 arguments. <code>func</code> should return either <code>true</code> or <code>false</code>.</p>
 <ul>
 <li>1 argument <code>(element) =&gt; ...</code>: The function takes in one argument: the respective element of the original list.</li>
@@ -240,14 +253,16 @@ all_gt_2 = values.all((e) =&gt; e &gt; 2)
 </ul>
 <h4 id="use-cases_4">Use-Cases<a class="headerlink" href="#use-cases_4" title="Permanent link">#</a></h4>
 <ul>
-<li>Evaluate if any elements of a list are greater than 2 <sup id="fnref3:7789"><a class="footnote-ref" href="#fn:7789">1</a></sup></li>
+<li>Evaluate if any elements of a list are greater than 2 <sup id="fnref3:2261"><a class="footnote-ref" href="#fn:2261">1</a></sup></li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1,3,5,6,7]
+<pre><code class="language-desmoscl">values = [1,3,5,6,7]
 
 any_gt_2 = values.any((e) =&gt; e &gt; 2)
-# any_gt_2 should be true</code></pre>
+# any_gt_2 should be true
+</code></pre>
 <h3 id="listsreduce">Lists.reduce()<a class="headerlink" href="#listsreduce" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.reduce(init::Type, func::ArrowFunction)::Type</code></pre>
+<pre><code class="language-desmoscl">list.reduce(init::Type, func::ArrowFunction)::Type
+</code></pre>
 <p>This function returns the result of calling <code>func</code> on each element of the list, with the results being compounded using the <code>acc</code> argument described below. The arrow function <code>func</code> can be defined with either 2 or 3 arguments.</p>
 <ul>
 <li>1 argument <code>(acc, cur) =&gt; ...</code>: The function takes in two arguments: <code>acc</code> as the accumulated value and <code>cur</code> as the current list element.</li>
@@ -257,68 +272,78 @@ any_gt_2 = values.any((e) =&gt; e &gt; 2)
 <ul>
 <li>Making a string of all elements of a list.</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
-values_string = values.slice(2,values.length).reduce("${values[1]}", (acc, cur) =&gt; "$(acc), $(cur)")
-# values_string should contain '1, 3, 4, 6, 5, 2'</code></pre>
+<pre><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
+values_string = values.slice(2,values.length).reduce(&quot;${values[1]}&quot;, (acc, cur) =&gt; &quot;$(acc), $(cur)&quot;)
+# values_string should contain '1, 3, 4, 6, 5, 2'
+</code></pre>
 <ul>
 <li>Sum all elements of a list.</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
-values_sum = values.reduce(0, (acc, cur) =&gt; numericValue("$(acc) + $(cur)"))
-# values_sum should contain 21</code></pre>
+<pre><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
+values_sum = values.reduce(0, (acc, cur) =&gt; numericValue(&quot;$(acc) + $(cur)&quot;))
+# values_sum should contain 21
+</code></pre>
 <h3 id="listsslice">Lists.slice()<a class="headerlink" href="#listsslice" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.slice(start_ind::number, end_ind::number)::List</code></pre>
+<pre><code class="language-desmoscl">list.slice(start_ind::number, end_ind::number)::List
+</code></pre>
 <p><code>slice</code> makes a copy of a section of <code>list</code>, starting with the element at <code>start_ind</code> and ending with the element at <code>end_ind</code>. Note that while these indices generally should be integers, CL seems to accept any number (including negative).</p>
 <h4 id="use-cases_6">Use-Cases<a class="headerlink" href="#use-cases_6" title="Permanent link">#</a></h4>
 <ul>
 <li>Getting the first half of a list.</li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
-first_values = values.slice(1, numericValue("${values.length} / 2"))
-# first_values should contain [1, 3, 4]</code></pre>
+<pre><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
+first_values = values.slice(1, numericValue(&quot;${values.length} / 2&quot;))
+# first_values should contain [1, 3, 4]
+</code></pre>
 <h3 id="listsjoin">Lists.join()<a class="headerlink" href="#listsjoin" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.join(list2::List)::List</code></pre>
+<pre><code class="language-desmoscl">list.join(list2::List)::List
+</code></pre>
 <p><code>join</code> returns the result of appending <code>list2</code> to <code>list</code>.</p>
 <h4 id="use-cases_7">Use-Cases<a class="headerlink" href="#use-cases_7" title="Permanent link">#</a></h4>
 <ul>
-<li>Merging two lists together. <sup id="fnref4:7789"><a class="footnote-ref" href="#fn:7789">1</a></sup></li>
+<li>Merging two lists together. <sup id="fnref4:2261"><a class="footnote-ref" href="#fn:2261">1</a></sup></li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">v1 = [1, 3, 4]
+<pre><code class="language-desmoscl">v1 = [1, 3, 4]
 v2 = [6, 5, 2]
 values = v1.join(v2)
-# values should contain [1, 3, 4, 6, 5, 2]</code></pre>
+# values should contain [1, 3, 4, 6, 5, 2]
+</code></pre>
 <h3 id="listsreverse">Lists.reverse()<a class="headerlink" href="#listsreverse" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">list.reverse()::List</code></pre>
+<pre><code class="language-desmoscl">list.reverse()::List
+</code></pre>
 <p><code>reverse</code> returns a copy of <code>list</code> in reversed order.</p>
 <h4 id="use-cases_8">Use-Cases<a class="headerlink" href="#use-cases_8" title="Permanent link">#</a></h4>
 <ul>
-<li>Reversing a list. <sup id="fnref5:7789"><a class="footnote-ref" href="#fn:7789">1</a></sup></li>
+<li>Reversing a list. <sup id="fnref5:2261"><a class="footnote-ref" href="#fn:2261">1</a></sup></li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
+<pre><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
 rev_values = v1.join(v2)
-# values should contain [2, 5, 6, 4, 3, 1]</code></pre>
+# values should contain [2, 5, 6, 4, 3, 1]
+</code></pre>
 <h3 id="range">range()<a class="headerlink" href="#range" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">range(lower::number, upper::number, step::number)::List&lt;number&gt;
+<pre><code class="language-desmoscl">range(lower::number, upper::number, step::number)::List&lt;number&gt;
 range(lower::number, upper::number)::List&lt;number&gt;
-range(upper::number)::List&lt;number&gt;</code></pre>
+range(upper::number)::List&lt;number&gt;
+</code></pre>
 <p>Returns a list which starts at <code>lower</code> and counts up to <code>upper</code> with step sizes of size <code>step</code>. If <code>step</code> is not specificied, it defaults to 1. If <code>lower</code> is not specificied, it defaults to 1. If the step size is negative, it will count backwards from <code>lower</code> to <code>upper</code> (in this case, <code>lower</code> will need to be greater than <code>upper</code>). This will return <code>undefined</code> if <code>step</code> is not a nonzero integer.</p>
 <h4 id="use-cases_9">Use-Cases<a class="headerlink" href="#use-cases_9" title="Permanent link">#</a></h4>
 <ul>
-<li>Creating a list of evenly spaced numbers. <sup id="fnref6:7789"><a class="footnote-ref" href="#fn:7789">1</a></sup></li>
+<li>Creating a list of evenly spaced numbers. <sup id="fnref6:2261"><a class="footnote-ref" href="#fn:2261">1</a></sup></li>
 </ul>
-<pre class="highlight"><code class="language-desmoscl">r1 = range(5)
+<pre><code class="language-desmoscl">r1 = range(5)
 # r1 is [1, 2, 3, 4, 5]
 r2 = range(2, 5)
 # r2 is [2, 3, 4, 5]
 r3 = range(2, 5, 2)
 # r3 is [2, 4]
 r4 = range(5, 2, -2)
-# r4 is [5, 3]</code></pre>
+# r4 is [5, 3]
+</code></pre>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:7789">
-<p>Add a more compelling example here. Want to contribute? See the <a href="../#contributing">Contribution section</a>&#160;<a class="footnote-backref" href="#fnref:7789" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7789" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:7789" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:7789" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:7789" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:7789" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:2261">
+<p>Add a more compelling example here. Want to contribute? See the <a href="../#contributing">Contribution section</a>&#160;<a class="footnote-backref" href="#fnref:2261" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2261" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2261" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2261" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:2261" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:2261" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

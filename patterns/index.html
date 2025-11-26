@@ -260,20 +260,25 @@
 <p>The different patterns in Desmos CL are tools which can be used to require student answers in certain formats or to parse complex student inputs. Some of these patterns can themselves contain other patterns, like the <code>fraction</code> pattern which requires a pattern for the numerator and denominator.</p>
 <h3 id="generating-patterns">Generating Patterns<a class="headerlink" href="#generating-patterns" title="Permanent link">#</a></h3>
 <p>I personally think that examples are the best way to learn the peculiar format for defining patterns. Let's say that we want to make a pattern that matches a basic fraction in the format \(\frac{a}{b}\). We could define that as:</p>
-<pre class="highlight"><code class="language-desmoscl">frac_pattern = patterns.fraction(patterns.number, patterns.number)</code></pre>
+<pre><code class="language-desmoscl">frac_pattern = patterns.fraction(patterns.number, patterns.number)
+</code></pre>
 <p>Then, let's say that students are putting their answer (as a fraction) into a math response component named <code>math_resp</code>. Then we could get the numerator of their response with:</p>
-<pre class="highlight"><code class="language-desmoscl">frac_pattern.parse(math_resp.latex).numerator().latex</code></pre>
+<pre><code class="language-desmoscl">frac_pattern.parse(math_resp.latex).numerator().latex
+</code></pre>
 <p>The <code>parse</code> method parses the student response and returns an object which we can get the numerator, denominator, or latex from. Note that each pattern object will have different things you can parse out of it (fractions have numerators and denominators, exponents have bases and exponents, etc.).</p>
 <p>For a more complex pattern example, let's say that we gave our students the challenge of converting \(\left(\frac{a}{b}\right)^5\) into a fraction, with an expected answer of \(\frac{a^5}{b^5}\). This would correspond to the following pattern. Note that we can assign <code>patterns</code> to a shorthand variable to reduce the size of our pattern definition.</p>
-<pre class="highlight"><code class="language-desmoscl">p = patterns
-ans_pattern = p.fraction(p.exponent(p.literal("a"), p.integer), p.exponent(p.literal("b"), p.integer))</code></pre>
+<pre><code class="language-desmoscl">p = patterns
+ans_pattern = p.fraction(p.exponent(p.literal(&quot;a&quot;), p.integer), p.exponent(p.literal(&quot;b&quot;), p.integer))
+</code></pre>
 <p>Now that we have the answer, we can first check <em>that</em> the student answer is in this format. To do this, we would use <code>matches</code> like so:</p>
-<pre class="highlight"><code class="language-desmoscl">ans_matches = ans_pattern.matches(math_resp.latex)</code></pre>
+<pre><code class="language-desmoscl">ans_matches = ans_pattern.matches(math_resp.latex)
+</code></pre>
 <p>Once we've checked that, we can confirm that the exponents are correct by using multiple applications of <code>parse</code> like so:</p>
-<pre class="highlight"><code class="language-desmoscl">a_exp = ans_pattern.parse(math_resp.latex).numerator().exponent().numericValue
+<pre><code class="language-desmoscl">a_exp = ans_pattern.parse(math_resp.latex).numerator().exponent().numericValue
 b_exp = ans_pattern.parse(math_resp.latex).denominator().exponent().numericValue
 
-is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
+is_correct = (a_exp = 5) and (b_exp = 5)
+</code></pre>
 <h3 id="pattern-playground">Pattern Playground<a class="headerlink" href="#pattern-playground" title="Permanent link">#</a></h3>
 <p>If you want to play around with the different patterns that are possible, below you can find a kind of "pattern playground" which will render the latex that corresponds to the kind of pattern you are constructing. Note that "patterns." or "p." both work as prefixes, though only "patterns." will work as a prefix in the CL editor (unless you've included the line <code>p = patterns</code>). Additionally, this playground only includes a set of the more common patterns (the ones with explanations currently in this documentation).</p>
 <p><strong>Input your pattern here:</strong></p>
@@ -635,7 +640,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patternanyof">pattern.anyOf<a class="headerlink" href="#patternanyof" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.anyOf(term1::pattern, term2::pattern, ...)::orPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.anyOf(term1::pattern, term2::pattern, ...)::orPattern
+</code></pre>
 <p><code>anyOf</code> accepts any number of terms, and will match any of them.</p>
 <h4 id="pattern-attributes_6">Pattern Attributes<a class="headerlink" href="#pattern-attributes_6" title="Permanent link">#</a></h4>
 <p><code>orPattern</code></p>
@@ -679,7 +685,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patternsum">pattern.sum<a class="headerlink" href="#patternsum" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.sum(term1::pattern, term2::pattern, ...)::sumPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.sum(term1::pattern, term2::pattern, ...)::sumPattern
+</code></pre>
 <p><code>sum</code> accepts any number of terms, and will match their addition.</p>
 <h4 id="pattern-attributes_7">Pattern Attributes<a class="headerlink" href="#pattern-attributes_7" title="Permanent link">#</a></h4>
 <p><code>sumPattern</code></p>
@@ -800,7 +807,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patternproduct">pattern.product<a class="headerlink" href="#patternproduct" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.product(term1::pattern, term2::pattern, ...)::productPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.product(term1::pattern, term2::pattern, ...)::productPattern
+</code></pre>
 <p><code>product</code> accepts any number of terms, and will match their product.</p>
 <h4 id="pattern-attributes_9">Pattern Attributes<a class="headerlink" href="#pattern-attributes_9" title="Permanent link">#</a></h4>
 <p><code>productPattern</code></p>
@@ -864,7 +872,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patternjuxt">pattern.juxt<a class="headerlink" href="#patternjuxt" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.juxt(term1::pattern, term2::pattern, ...)::juxtPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.juxt(term1::pattern, term2::pattern, ...)::juxtPattern
+</code></pre>
 <p><code>juxt</code> accepts any number of terms, and will match their juxtaposition.</p>
 <p><strong>WARNING</strong>: <code>juxt</code> will not recognize the juxtaposition of two numbers (as these are often parsed as a single number) and in general is not completely intuitive. Make sure to test thoroughly when using this feature.</p>
 <h4 id="pattern-attributes_10">Pattern Attributes<a class="headerlink" href="#pattern-attributes_10" title="Permanent link">#</a></h4>
@@ -929,7 +938,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patternfraction">pattern.fraction<a class="headerlink" href="#patternfraction" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.fraction(numerator::pattern, denominator::pattern)::fractionPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.fraction(numerator::pattern, denominator::pattern)::fractionPattern
+</code></pre>
 <h4 id="pattern-attributes_11">Pattern Attributes<a class="headerlink" href="#pattern-attributes_11" title="Permanent link">#</a></h4>
 <p><code>fractionPattern</code></p>
 <table>
@@ -992,7 +1002,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patterndivision">pattern.division<a class="headerlink" href="#patterndivision" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.division(dividend::pattern, divisor::pattern)::divisionPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.division(dividend::pattern, divisor::pattern)::divisionPattern
+</code></pre>
 <h4 id="pattern-attributes_12">Pattern Attributes<a class="headerlink" href="#pattern-attributes_12" title="Permanent link">#</a></h4>
 <p><code>divisionPattern</code></p>
 <table>
@@ -1055,7 +1066,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 </tbody>
 </table>
 <h3 id="patternradical">pattern.radical<a class="headerlink" href="#patternradical" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.radical(radicand::pattern, degree::pattern)::radicalPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.radical(radicand::pattern, degree::pattern)::radicalPattern
+</code></pre>
 <h4 id="pattern-attributes_13">Pattern Attributes<a class="headerlink" href="#pattern-attributes_13" title="Permanent link">#</a></h4>
 <p><code>radicalPattern</code></p>
 <table>
@@ -1126,7 +1138,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 <h3 id="patternoverleftarrow">pattern.overLeftArrow<a class="headerlink" href="#patternoverleftarrow" title="Permanent link">#</a></h3>
 <p>Description Needed</p>
 <h3 id="patterndifference">pattern.difference<a class="headerlink" href="#patterndifference" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.difference(minuend::pattern, subtrahend::pattern)::pattern</code></pre>
+<pre><code class="language-desmoscl">patterns.difference(minuend::pattern, subtrahend::pattern)::pattern
+</code></pre>
 <h4 id="pattern-attributes_14">Pattern Attributes<a class="headerlink" href="#pattern-attributes_14" title="Permanent link">#</a></h4>
 <p><code>differencePattern</code></p>
 <table>
@@ -1197,7 +1210,8 @@ is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
 <h3 id="patternprime">pattern.prime<a class="headerlink" href="#patternprime" title="Permanent link">#</a></h3>
 <p>Description Needed</p>
 <h3 id="patternexponent">pattern.exponent<a class="headerlink" href="#patternexponent" title="Permanent link">#</a></h3>
-<pre class="highlight"><code class="language-desmoscl">patterns.exponent(base::pattern, exponent::pattern)::exponentPattern</code></pre>
+<pre><code class="language-desmoscl">patterns.exponent(base::pattern, exponent::pattern)::exponentPattern
+</code></pre>
 <h4 id="pattern-attributes_15">Pattern Attributes<a class="headerlink" href="#pattern-attributes_15" title="Permanent link">#</a></h4>
 <p><code>exponentPattern</code></p>
 <table>

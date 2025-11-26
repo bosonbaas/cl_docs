@@ -115,20 +115,22 @@
 <p>The simplest datatype in CL, <code>boolean</code> variables can either be <code>true</code> or <code>false</code>.</p>
 <h3 id="string"><code>string</code><a class="headerlink" href="#string" title="Permanent link">#</a></h3>
 <p>A <code>string</code> object is, like in most languages, a list of characters. However, it cannot be indexed directly (i.e. <code>"test"[1]</code> will return an error). Strings can be explicitly defined, and support string interpolation. Only variables of type <code>string</code>, <code>latex</code>, or <code>number</code> can be used for string interpolation. For example:</p>
-<pre class="highlight"><code class="language-desmoscl">x = 5
-my_string = "The value of x is ${x}"
-# m_string now contains "The value of x is 5"
+<pre><code class="language-desmoscl">x = 5
+my_string = &quot;The value of x is ${x}&quot;
+# m_string now contains &quot;The value of x is 5&quot;
 
 y = true
-broken_str = "The value of y is ${y}"
-# This returns an error, as boolean-type variables cannot be interpolated</code></pre>
+broken_str = &quot;The value of y is ${y}&quot;
+# This returns an error, as boolean-type variables cannot be interpolated
+</code></pre>
 <h3 id="latex"><code>latex</code><a class="headerlink" href="#latex" title="Permanent link">#</a></h3>
 <p>The <code>latex</code> object is similar to the <code>string</code> object, but specifically supports latex-like formatting. <strong>MORE DETAILS NEEDED</strong></p>
 <h3 id="number"><code>number</code><a class="headerlink" href="#number" title="Permanent link">#</a></h3>
 <p>A <code>number</code> object in CL can contain any real (well, technically rational) number (positive, negative, and decimal). However, note that no number-based operations can happen directly in CL. Instead, operations like adding two numbers together must be formatted as a string using string interpolation, and then sent through the <code>numericValue</code> function to get a value. For example:</p>
-<pre class="highlight"><code class="language-desmoscl">x = 5
+<pre><code class="language-desmoscl">x = 5
 y = 3
-z = numericValue("${x} + ${y}")</code></pre>
+z = numericValue(&quot;${x} + ${y}&quot;)
+</code></pre>
 <h3 id="sketch"><code>sketch</code><a class="headerlink" href="#sketch" title="Permanent link">#</a></h3>
 <p><strong>DETAILS NEEDED</strong></p>
 <h3 id="component"><code>component</code><a class="headerlink" href="#component" title="Permanent link">#</a></h3>
