@@ -1,0 +1,49 @@
+@external propSource patternHighlight from "./highlight"
+
+//!top
+//!This is only expected to parse a single line
+@top Program { Pattern }
+//!patterns
+
+Pattern {
+  Prefix "." Expression |
+  String
+}
+
+Expression {
+  Variable |
+  FunctionCall
+}
+
+Variable {
+  Identifier
+}
+
+FunctionCall {
+  Identifier Args
+}
+
+Args {
+  "(" Pattern ("," Pattern)* ")"
+}
+
+String {
+  string |
+  latex
+}
+
+//!tokens
+
+@tokens {
+  space { @whitespace+ }
+  string { '"' (!["\\] | "\\" _)* '"' }
+  latex { '`' (![`\\] | "\\" _)* '`' }
+  Identifier { $[a-zA-Z_]+ }
+  Prefix { $[a-zA-Z_]+ }
+}
+
+//!skip
+
+@skip { space }
+
+@detectDelim

@@ -1,0 +1,51 @@
+sinks:
+  correct:
+    type: boolean
+    desc: Displays a checkmark in the student summary screen if `true`
+  hidden:
+    type: "boolean"
+    desc: "Hides the component when `true`"
+  initialOrder:
+    type: List<number>
+    desc: Defines the initial ordering of the items. Orders items based on the order of the numbers in the list (integers not necessary)
+  itemContent:
+    name: itemContent(index::number)
+    type: string
+    desc: Sets the content of item at `index`.
+  readOnly:
+    type: boolean
+  warning:
+    type: string
+    desc: Puts a warning on the teacher dashboard associated with the student.
+
+hiddenSinks:
+  export:
+  exportNumber:
+  exportString:
+  exportNumberList:
+  exportNumberArtifact:
+  exportStringArtifact:
+  exportRichTextArtifact:
+
+sources:
+  indexOfItem:
+    name: indexOfItem(initialItemIndex::number)
+    type: number
+    desc: Returns the resulting index of an item that started at `initialItemIndex`
+  itemAtIndex:
+    name: itemAtIndex(itemIndex::number)
+    type: number
+    desc: Returns the initial index of the item that ended up at `itemIndex`.
+  matchesKey:
+    type: boolean
+    desc: Returns `true` if the current answer matches a provided answer key.
+  order:
+    type: List<number>
+    desc: List of indexs where items currently are
+  textAtIndex:
+    name: textAtIndex(itemIndex::number)
+    type: "string"
+    desc: The text at index `itemIndex`.
+  timeSinceSubmit:
+    type: "number"
+    desc: "Returns number of seconds since submit button was pressed. Can take one parameter `maxTime`, and will use this as a ceiling for its output value."

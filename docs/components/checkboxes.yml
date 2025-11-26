@@ -1,0 +1,98 @@
+sinks:
+  choiceContent:
+    name: choiceContent(index::number)
+    type: string
+    desc: Sets the content of `index` choice.
+  correct:
+    type: boolean
+    desc: Displays a checkmark in the student summary screen if `true`
+  disableChange:
+    type: boolean
+    desc: Disables changing a selection if `true`
+  explainPrompt:
+    type: string
+    desc: Replaces the "Explain your thinking" prompt.
+  hidden:
+    type: "boolean"
+    desc: "Hides the component when `true`"
+  initialText:
+    type: string | latex
+    desc: The initial text in the text input under "Explain your thinking"
+  maxButtonsPerRow:
+    type: number
+    desc: Max numbers of buttons laid out in each row
+  maxSelectedChoices:
+    type: number
+    desc: Maximum number of choices that can be selected.
+  prompt:
+    type: string
+    desc: Sets the prompt above the selections.
+  readOnly:
+    type: boolean
+  resetOnChange:
+    type: string
+    desc: Resets the expression when the string itself changes.
+  showExplain:
+    type: boolean
+    desc: If `true`, then show the request for student to explain answer.
+  showPeerResponses:
+    type: boolean
+    disc: If `true`, then show up to 3 peer responses.
+  showSubmitButton:
+    type: "boolean"
+    desc: "Hides submit button if `true`."
+  submitLabel:
+    type: "string | latex"
+    desc: "A label for the submit button."
+  warning:
+    type: string
+    desc: Puts a warning on the teacher dashboard associated with the student.
+
+hiddenSinks:
+  choiceLayerContent:
+    name: choiceLayerContent(choiceIndex::number)
+    type: layer
+  narration:
+    name: narration(choiceIndex::number)
+    type: string
+  multiSelectHeading:
+    type: string
+    desc: Appears to be overwritten by `prompt`
+  initialSelection:
+  WOTS:
+  disableChoice:
+  export:
+  exportNumber:
+  exportString:
+  exportNumberList:
+  exportNumberArtifact:
+  exportStringArtifact:
+  exportRichTextArtifact:
+
+sources:
+  choiceContent:
+    name: choiceContent(index::number)
+    type: string
+    desc: The content for the choice of index `index`
+  explainContent:
+    type: "string"
+    desc: The current content of the "Explain your thinking" box
+  isSelected:
+    name: isSelected(choiceIndex::number)
+    type: boolean
+    desc: Whether the choice at index `choiceIndex` is selected.
+  isSelectedList:
+    type: List<boolean>
+    desc: Boolean list indicating which selections are selected.
+  matchesKey:
+    type: boolean
+    desc: Returns `true` if the current answer matches a provided answer key.
+  submitCount:
+    type: number
+    desc: The number of submissions the student has made.
+  submitted:
+    type: "boolean"
+    desc: "`true` if the component is submitted"
+  timeSinceSubmit:
+    type: "number"
+    desc: "Returns number of seconds since submit button was pressed. Can take one parameter `maxTime`, and will use this as a ceiling for its output value."

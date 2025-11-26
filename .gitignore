@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+docs/assets/editor
+editor/node_modules
+editor/package-lock.json
+dsl-parser.js
+dsl-parser.terms.js

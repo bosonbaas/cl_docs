@@ -1,0 +1,30 @@
+sinks:
+  content:
+    type: "string | latex"
+    desc: "Content of the note."
+  hidden:
+    type: "boolean"
+    desc: "Hides the component when `true`"
+hiddenSinks:
+  inlineMathInitialLatex:
+  inlineMathPlaceholderLatex:
+  inlineMathErrorMessage:
+  inlineMathDisableEdit:
+  inlineDropdownDisableEdit:
+  inlineDropdownChoiceContent:
+  richText:
+  marksForLabel:
+  maxSelectionCount:
+  correct:
+  warning:
+  readOnly:
+  resetOnChange:
+  export:
+  exportNumber:
+  exportString:
+  exportNumberList:
+  exportNumberArtifact:
+  exportStringArtifact:
+  exportRichTextArtifact:
+
+sources:

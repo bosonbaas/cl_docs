@@ -1,0 +1,519 @@
+numberPattern:
+  satisfies:
+    usage: |
+      `satisfies(ltx::latex)`
+    type: numberPattern
+    description: |
+      `ltx` should be some expression containing the variable `x` which evaluates to either `true` or `false`. For example, the following will match only to negative integers:
+      ```desmoscl
+      neg_int = patterns.integer.satisfies(`x < 0`)
+      ```
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: numberPatternMatch
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: numberPattern
+  allowParens:
+    usage: |
+      `allowParens`
+    type: numberPattern
+
+numberPatternMatch:
+  numericValue:
+    usage: |
+      `numericValue`
+    type: number
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+mixedNumberPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: mixedNumberPatternMatch
+
+mixedNumberPatternMatch:
+  numericValue:
+    usage: |
+      `numericValue`
+    type: number
+
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  whole:
+    usage: |
+      `whole`
+    type: number
+
+  numerator:
+    usage: |
+      `numerator`
+    type: number
+
+  denominator:
+    usage: |
+      `denominator`
+    type: number
+
+scientificPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: scientificPatternMatch
+
+scientificPatternMatch:
+  numericValue:
+    usage: |
+      `numericValue`
+    type: number
+
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  coefficient:
+    usage: |
+      `coefficient`
+    type: number
+
+  exponent:
+    usage: |
+      `exponent`
+    type: number
+
+literalPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: literalPatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: literalPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: literalPattern
+
+literalPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+expressionPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: expressionPatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: expressionPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: expressionPattern
+
+expressionPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+fractionPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: fractionPatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: fractionPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: fractionPattern
+
+fractionPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  numerator:
+    usage: |
+      `numerator`
+    type: patternMatch
+
+  denominator:
+    usage: |
+      `denominator`
+    type: patternMatch
+
+divisionPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: divisionPatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: divisionPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: divisionPattern
+
+divisionPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  divisor:
+    usage: |
+      `divisor`
+    type: patternMatch
+
+  dividend:
+    usage: |
+      `dividend`
+    type: patternMatch
+
+differencePattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: differencePatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: differencePattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: differencePattern
+
+differencePatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  minuend:
+    usage: |
+      `minuend`
+    type: patternMatch
+
+  subtrahend:
+    usage: |
+      `subtrahend`
+    type: patternMatch
+
+radicalPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: radicalPatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: radicalPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: radicalPattern
+
+radicalPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  radicand:
+    usage: |
+      `radicand`
+    type: patternMatch
+
+  degree:
+    usage: |
+      `degree`
+    type: patternMatch
+
+orPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: orPatternMatch
+
+orPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+sumPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: sumPatternMatch
+
+  strictOrder:
+    usage: |
+      `strictOrder`
+    type: sumPattern
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: sumPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: sumPattern
+
+  rejectNegativeTerms:
+    usage: |
+      `rejectNegativeTerms`
+    type: sumPattern
+
+  allowNegativeTerms:
+    usage: |
+      `allowNegativeTerms`
+    type: sumPattern
+
+sumPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  term`X`:
+    usage: |
+      `termX`
+    type: patternMatch
+    description: |
+      where `X` is the index of a term in the `patterns.sum` call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the sum, one would call:
+      ```desmoscl
+      patterns.sum(patterns.integer, patterns.integer).parse(`1+2`).term1
+      ```
+
+productPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: productPatternMatch
+
+  strictOrder:
+    usage: |
+      `strictOrder`
+    type: productPattern
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: productPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: productPattern
+
+productPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  term`X`:
+    usage: |
+      `termX`
+    type: patternMatch
+    description: |
+      where `X` is the index of a term in the `patterns.product` call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the product, one would call:
+      ```desmoscl
+      patterns.product(patterns.integer, patterns.integer).parse(`1*2`).term1
+      ```
+
+juxtPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: juxtPatternMatch
+
+  strictOrder:
+    usage: |
+      `strictOrder`
+    type: juxtPattern
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: juxtPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: juxtPattern
+
+juxtPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  term`X`:
+    usage: |
+      `termX`
+    type: patternMatch
+    description: |
+      where `X` is the index of a term in the `patterns.juxt` call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the juxt, one would call:
+      ```desmoscl
+      patterns.juxt(patterns.integer, patterns.literal(`x`)).parse(`1x`).term1
+      ```
+
+containsPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: containsPatternMatch
+
+containsPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  term1:
+    usage: |
+      `term1`
+    type: patternMatch
+
+exponentPattern:
+  matches:
+    usage: |
+      `matches(ltx::latex)`
+    type: boolean
+
+  parse:
+    usage: |
+      `parse(ltx::latex)`
+    type: exponentPatternMatch
+
+  rejectParens:
+    usage: |
+      `rejectParens`
+    type: exponentPattern
+
+  allowParens:
+    usage: |
+      `allowParens`
+    type: exponentPattern
+
+exponentPatternMatch:
+  latex:
+    usage: |
+      `latex`
+    type: latex
+
+  base:
+    usage: |
+      `base`
+    type: patternMatch
+
+  exponent:
+    usage: |
+      `exponent`
+    type: patternMatch

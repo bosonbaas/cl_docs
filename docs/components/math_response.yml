@@ -1,0 +1,116 @@
+sinks:
+  capture:
+    name: "capture(key::string)"
+    type: number
+    desc: Capture a numeric value (often the evaluated result of the submission), which can later be referenced with `key`
+  clearOnReset:
+    type: boolean
+  correct:
+    type: boolean
+    desc: Displays a checkmark in the student summary screen if `true`
+  disableEdit:
+    type: boolean
+    desc: Disables editing the expression if `true`
+  disableEvaluation:
+    type: boolean
+    desc: Does not evaluate the expression for the student when `true`
+  errorMessage:
+    type: string
+    desc: Error message to show the student after attempted submission. Blocks submission when not empty.
+  explainPrompt:
+    type: string
+    desc: Replaces the "Explain your thinking" prompt.
+  hidden:
+    type: "boolean"
+    desc: "Hides the component when `true`"
+  initialLatex:
+    type: string | latex
+    desc: The initial text in the expression input
+  initialText:
+    type: string | latex
+    desc: The initial text in the text input under "Explain your thinking"
+  placeholderLatex:
+    type: string | latex
+    desc: The placeholder for the expression input.
+  readOnly:
+    type: boolean
+  resetLabel:
+    type: string
+    desc: Specifies a label for the button that allows the student to edit their answer.
+  resetOnChange:
+    type: string
+    desc: Resets the expression when the string itself changes.
+  showExplain:
+    type: boolean
+    desc: If `true`, then show the request for student to explain answer.
+  showPeerResponses:
+    type: boolean
+    disc: If `true`, then show up to 3 peer responses.
+  showSubmitButton:
+    type: "boolean"
+    desc: "Hides submit button if `true`."
+  submitDisabled:
+    type: "boolean"
+    desc: "Disables the submit button if `false`."
+  submitLabel:
+    type: "string | latex"
+    desc: "A label for the submit button."
+  suffix:
+    type: string
+    desc: Adds this suffix to the end of student input.
+  warning:
+    type: string
+    desc: Puts a warning on the teacher dashboard associated with the student.
+
+hiddenSinks:
+  promptAriaLabel:
+    type: string
+  export:
+    name: "export(heading::string)"
+    type: string
+  exportNumber:
+    name: "exportNumber(key::string)"
+    type: number
+  exportNumberArtifact:
+    name: "exportNumberArtifact(tag::string)"
+    type: number
+  exportNumberList:
+    name: "exportNumberList(key::string)"
+    type: List<number>
+  exportString:
+    name: "exportString(key::string)"
+    type: string
+  exportStringArtifact:
+    name: "exportStringArtifact(tag::string)"
+    type: string
+  exportRichTextArtifact:
+    name: "exportRichTextArtifact(tag::string)"
+    type: richText
+
+sources:
+  explainContent:
+    type: "string"
+    desc: The current content of the "Explain your thinking" box
+  history:
+    name: history(key::string)
+    type: List<number>
+    desc: The history of the `key` variable (same key should appear in a `capture` statement in the component)
+  lastValue:
+    name: lastValue(key::string)
+    type: number
+    desc: The last value of the `key` variable
+  latex:
+    type: latex
+    desc: The latex content of the expression input.
+  numericValue:
+    type: number
+    desc: The numeric value of the expression input.
+  submitCount:
+    type: number
+    desc: The number of submissions the student has made.
+  submitted:
+    type: "boolean"
+    desc: "`true` if the component is submitted"
+  timeSinceSubmit:
+    type: "number"
+    desc: "Returns number of seconds since submit button was pressed. Can take one parameter `maxTime`, and will use this as a ceiling for its output value."

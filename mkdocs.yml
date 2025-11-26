@@ -1,0 +1,36 @@
+site_name: The Unofficial Desmos CL Reference
+
+nav:
+  - Home: index.md
+  - Basic Syntax: syntax-intro.md
+  - Documentation:
+      - Types: types.md
+      - Components: components.md
+      - Lists: lists.md
+      - Patterns: patterns.md
+  - About: about.md
+
+theme:
+  name: readthedocs
+  favicon: img/favicon.svg
+
+plugins:
+  - search
+  - macros
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      use_pygments: false
+  - footnotes
+  - toc:
+      permalink: "#"
+
+extra_javascript:
+  - js/cl_syntax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
+  - assets/editor/editor.js
+  - js/editor_mount.js
+
+extra_css:
+  - css/tables.css
