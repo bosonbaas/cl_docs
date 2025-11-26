@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>The Unofficial Desmos CL Reference</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/tables.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> The Unofficial Desmos CL Reference
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#useful-links">Useful links</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="syntax-intro/">Basic Syntax</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="types/">Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="patterns/">Patterns</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">The Unofficial Desmos CL Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="the-unofficial-desmos-cl-reference">The Unofficial Desmos CL Reference<a class="headerlink" href="#the-unofficial-desmos-cl-reference" title="Permanent link">#</a></h1>
+<p>This site is an unofficial reference for the Desmos CL syntax, intended to be up-to-date on newly introduced syntax. If you find this useful, fantastic! If there's anything you'd like to see added/changed about the current layout, please drop a request on the <a href="https://github.com/bosonbaas/cl_docs">GitHub</a> repository, or even open up a pull request!</p>
+<p>What you'll find here:</p>
+<ul>
+<li>Reference material that clarifies how CL expressions and state work.</li>
+<li>Tips, patterns, and troubleshooting notes from my own (and other contributors) experience workign with CL.</li>
+</ul>
+<p>This is intended as a reference for those already familiar with Desmos CL. If you're just starting, I'd encourage you to take a look at the official Desmos CL documentation <a href="https://classroom.amplify.com/computation-layer/documentation">here</a></p>
+<blockquote>
+<p><strong>Disclaimer:</strong><br />
+Visit Amplify Classroom for free lessons, lesson-building tools, and Polypad virtual manipulatives at amplifycom.wpengine.com/classroom. This content is not affiliated with, sponsored by, or endorsed by Amplify or any of its licensors. Amplify®, Amplify Classroom™, and related trademarks are the property of Amplify Education, Inc.</p>
+</blockquote>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">#</a></h2>
+<p>If you've looked around the website, you may notice that there are a <em>lot</em> of things missing! For example, what about those one-off functions like <code>parseOrderedPair</code>? And half of the components don't have a comprehensive list of types, what's up with that??</p>
+<p>Thus, contributions are welcomed and <em>needed</em>! If you're comfortable with GitHub, then head over to the <a href="https://github.com/bosonbaas/cl_docs">Github</a> page and open up an issue, or if you're really ambitious make a pull request! If you're not super comfortable with that, but still want to help fill in the documentation, feel free email me at <a href="mailto:unofficialcldocs@gmail.com">unofficialcldocs@gmail.com</a>!</p>
+<p>Additionally, if you have neat examples or hacks that you've developed and you think others would find helpful, please send them on in, and we can make them a resource for the rest of the community.</p>
+<h2 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>Official Desmos CL documentation <a href="https://classroom.amplify.com/computation-layer/documentation">here</a></p>
+</li>
+<li>
+<p>Official CL forum <a href="https://cl.desmos.com">here</a></p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="syntax-intro/" class="btn btn-neutral float-right" title="Basic Syntax">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="syntax-intro/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="js/cl_syntax.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+      <script src="assets/editor/editor.js"></script>
+      <script src="js/editor_mount.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-11-26 16:34:09.645829+00:00
+-->

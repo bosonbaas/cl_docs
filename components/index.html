@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Components - The Unofficial Desmos CL Reference</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/tables.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Components";
+        var mkdocs_page_input_path = "components.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> The Unofficial Desmos CL Reference
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../syntax-intro/">Basic Syntax</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Components</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#note">Note</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#free-response">Free Response</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#math-response">Math Response</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#multiple-choice">Multiple Choice</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#checkboxes">Checkboxes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ordered-list">Ordered List</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#graph">Graph</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sketch">Sketch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#media">Media</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#table">Table</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#action-button">Action Button</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#polypad">Polypad</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../patterns/">Patterns</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">The Unofficial Desmos CL Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Documentation</li>
+      <li class="breadcrumb-item active">Components</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="components">Components<a class="headerlink" href="#components" title="Permanent link">#</a></h1>
+<p>Components are the building blocks of Amplify Classroom's activities, and are the pieces tied together and controlled with CL. Components connect to each other by their <strong>sinks</strong> and <strong>sources</strong>. The <strong>sinks</strong> of a component are the values which define its appearance and behavior, and the <strong>sources</strong> of a component are variables which contain the state of the component.</p>
+<p>This resource is intended to be a quick reference for the data types and purpose of each source and sink. For a more interactive and official documentation, see <a href="https://classroom.amplify.com/computation-layer/documentation#components">Amplify's Documentation</a>.</p>
+<h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td><code>string | latex</code></td>
+<td>Content of the note.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td><code>boolean</code></td>
+<td>Hides the component when <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="free-response">Free Response<a class="headerlink" href="#free-response" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initialText</td>
+<td><code>string | latex</code></td>
+<td>Initial text of the free response. Often a prompt for student input.</td>
+</tr>
+<tr>
+<td>placeholderText</td>
+<td><code>string | latex</code></td>
+<td>Placeholder text of the free response. (default value of response)</td>
+</tr>
+<tr>
+<td>showSubmitButton</td>
+<td><code>boolean</code></td>
+<td>Hides submit button if <code>true</code>.</td>
+</tr>
+<tr>
+<td>submitDisabled</td>
+<td><code>boolean</code></td>
+<td>Disables the submit button if <code>false</code>.</td>
+</tr>
+<tr>
+<td>submitLabel</td>
+<td><code>string | latex</code></td>
+<td>A label for the submit button.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td><code>boolean</code></td>
+<td>Hides the component when <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td><code>string</code></td>
+<td>The current entered content.</td>
+</tr>
+<tr>
+<td>submitted</td>
+<td><code>boolean</code></td>
+<td><code>true</code> if the component is submitted</td>
+</tr>
+<tr>
+<td>timeSinceSubmit</td>
+<td><code>number</code></td>
+<td>Returns number of seconds since submit button was pressed. Can take one parameter <code>maxTime</code>, and will use this as a ceiling for its output value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="math-response">Math Response<a class="headerlink" href="#math-response" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capture(key::string)</td>
+<td><code>number</code></td>
+<td>Capture a numeric value (often the evaluated result of the submission), which can later be referenced with <code>key</code></td>
+</tr>
+<tr>
+<td>clearOnReset</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>correct</td>
+<td><code>boolean</code></td>
+<td>Displays a checkmark in the student summary screen if <code>true</code></td>
+</tr>
+<tr>
+<td>disableEdit</td>
+<td><code>boolean</code></td>
+<td>Disables editing the expression if <code>true</code></td>
+</tr>
+<tr>
+<td>disableEvaluation</td>
+<td><code>boolean</code></td>
+<td>Does not evaluate the expression for the student when <code>true</code></td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td><code>string</code></td>
+<td>Error message to show the student after attempted submission. Blocks submission when not empty.</td>
+</tr>
+<tr>
+<td>explainPrompt</td>
+<td><code>string</code></td>
+<td>Replaces the "Explain your thinking" prompt.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td><code>boolean</code></td>
+<td>Hides the component when <code>true</code></td>
+</tr>
+<tr>
+<td>initialLatex</td>
+<td><code>string | latex</code></td>
+<td>The initial text in the expression input</td>
+</tr>
+<tr>
+<td>initialText</td>
+<td><code>string | latex</code></td>
+<td>The initial text in the text input under "Explain your thinking"</td>
+</tr>
+<tr>
+<td>placeholderLatex</td>
+<td><code>string | latex</code></td>
+<td>The placeholder for the expression input.</td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>resetLabel</td>
+<td><code>string</code></td>
+<td>Specifies a label for the button that allows the student to edit their answer.</td>
+</tr>
+<tr>
+<td>resetOnChange</td>
+<td><code>string</code></td>
+<td>Resets the expression when the string itself changes.</td>
+</tr>
+<tr>
+<td>showExplain</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, then show the request for student to explain answer.</td>
+</tr>
+<tr>
+<td>showPeerResponses</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>showSubmitButton</td>
+<td><code>boolean</code></td>
+<td>Hides submit button if <code>true</code>.</td>
+</tr>
+<tr>
+<td>submitDisabled</td>
+<td><code>boolean</code></td>
+<td>Disables the submit button if <code>false</code>.</td>
+</tr>
+<tr>
+<td>submitLabel</td>
+<td><code>string | latex</code></td>
+<td>A label for the submit button.</td>
+</tr>
+<tr>
+<td>suffix</td>
+<td><code>string</code></td>
+<td>Adds this suffix to the end of student input.</td>
+</tr>
+<tr>
+<td>warning</td>
+<td><code>string</code></td>
+<td>Puts a warning on the teacher dashboard associated with the student.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>explainContent</td>
+<td><code>string</code></td>
+<td>The current content of the "Explain your thinking" box</td>
+</tr>
+<tr>
+<td>history</td>
+<td><code>List&lt;number&gt;</code></td>
+<td>The history of the <code>key</code> variable (same key should appear in a <code>capture</code> statement in the component)</td>
+</tr>
+<tr>
+<td>lastValue</td>
+<td><code>number</code></td>
+<td>The last value of the <code>key</code> variable</td>
+</tr>
+<tr>
+<td>latex</td>
+<td><code>latex</code></td>
+<td>The latex content of the expression input.</td>
+</tr>
+<tr>
+<td>numericValue</td>
+<td><code>number</code></td>
+<td>The numeric value of the expression input.</td>
+</tr>
+<tr>
+<td>submitCount</td>
+<td><code>number</code></td>
+<td>The number of submissions the student has made.</td>
+</tr>
+<tr>
+<td>submitted</td>
+<td><code>boolean</code></td>
+<td><code>true</code> if the component is submitted</td>
+</tr>
+<tr>
+<td>timeSinceSubmit</td>
+<td><code>number</code></td>
+<td>Returns number of seconds since submit button was pressed. Can take one parameter <code>maxTime</code>, and will use this as a ceiling for its output value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiple-choice">Multiple Choice<a class="headerlink" href="#multiple-choice" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>choiceContent(index::number)</td>
+<td><code>string</code></td>
+<td>Sets the content of <code>index</code> choice.</td>
+</tr>
+<tr>
+<td>correct</td>
+<td><code>boolean</code></td>
+<td>Displays a checkmark in the student summary screen if <code>true</code></td>
+</tr>
+<tr>
+<td>disableChange</td>
+<td><code>boolean</code></td>
+<td>Disables changing a selection if <code>true</code></td>
+</tr>
+<tr>
+<td>explainPrompt</td>
+<td><code>string</code></td>
+<td>Replaces the "Explain your thinking" prompt.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td><code>boolean</code></td>
+<td>Hides the component when <code>true</code></td>
+</tr>
+<tr>
+<td>initialText</td>
+<td><code>string | latex</code></td>
+<td>The initial text in the text input under "Explain your thinking"</td>
+</tr>
+<tr>
+<td>maxButtonsPerRow</td>
+<td><code>number</code></td>
+<td>Max numbers of buttons laid out in each row</td>
+</tr>
+<tr>
+<td>prompt</td>
+<td><code>string</code></td>
+<td>Sets the prompt above the selections.</td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>resetOnChange</td>
+<td><code>string</code></td>
+<td>Resets the expression when the string itself changes.</td>
+</tr>
+<tr>
+<td>showExplain</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, then show the request for student to explain answer.</td>
+</tr>
+<tr>
+<td>showPeerResponses</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>showSubmitButton</td>
+<td><code>boolean</code></td>
+<td>Hides submit button if <code>true</code>.</td>
+</tr>
+<tr>
+<td>submitLabel</td>
+<td><code>string | latex</code></td>
+<td>A label for the submit button.</td>
+</tr>
+<tr>
+<td>warning</td>
+<td><code>string</code></td>
+<td>Puts a warning on the teacher dashboard associated with the student.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>choiceContent</td>
+<td><code>string</code></td>
+<td>The content for the choice of index <code>index</code></td>
+</tr>
+<tr>
+<td>explainContent</td>
+<td><code>string</code></td>
+<td>The current content of the "Explain your thinking" box</td>
+</tr>
+<tr>
+<td>isSelected</td>
+<td><code>boolean</code></td>
+<td>Whether the choice at index <code>choiceIndex</code> is selected.</td>
+</tr>
+<tr>
+<td>isSelectedList</td>
+<td><code>List&lt;boolean&gt;</code></td>
+<td>Boolean list indicating which selections are selected.</td>
+</tr>
+<tr>
+<td>matchesKey</td>
+<td><code>boolean</code></td>
+<td>Returns <code>true</code> if the current answer matches a provided answer key.</td>
+</tr>
+<tr>
+<td>submitCount</td>
+<td><code>number</code></td>
+<td>The number of submissions the student has made.</td>
+</tr>
+<tr>
+<td>submitted</td>
+<td><code>boolean</code></td>
+<td><code>true</code> if the component is submitted</td>
+</tr>
+<tr>
+<td>timeSinceSubmit</td>
+<td><code>number</code></td>
+<td>Returns number of seconds since submit button was pressed. Can take one parameter <code>maxTime</code>, and will use this as a ceiling for its output value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkboxes">Checkboxes<a class="headerlink" href="#checkboxes" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>choiceContent(index::number)</td>
+<td><code>string</code></td>
+<td>Sets the content of <code>index</code> choice.</td>
+</tr>
+<tr>
+<td>correct</td>
+<td><code>boolean</code></td>
+<td>Displays a checkmark in the student summary screen if <code>true</code></td>
+</tr>
+<tr>
+<td>disableChange</td>
+<td><code>boolean</code></td>
+<td>Disables changing a selection if <code>true</code></td>
+</tr>
+<tr>
+<td>explainPrompt</td>
+<td><code>string</code></td>
+<td>Replaces the "Explain your thinking" prompt.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td><code>boolean</code></td>
+<td>Hides the component when <code>true</code></td>
+</tr>
+<tr>
+<td>initialText</td>
+<td><code>string | latex</code></td>
+<td>The initial text in the text input under "Explain your thinking"</td>
+</tr>
+<tr>
+<td>maxButtonsPerRow</td>
+<td><code>number</code></td>
+<td>Max numbers of buttons laid out in each row</td>
+</tr>
+<tr>
+<td>maxSelectedChoices</td>
+<td><code>number</code></td>
+<td>Maximum number of choices that can be selected.</td>
+</tr>
+<tr>
+<td>prompt</td>
+<td><code>string</code></td>
+<td>Sets the prompt above the selections.</td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>resetOnChange</td>
+<td><code>string</code></td>
+<td>Resets the expression when the string itself changes.</td>
+</tr>
+<tr>
+<td>showExplain</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, then show the request for student to explain answer.</td>
+</tr>
+<tr>
+<td>showPeerResponses</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>showSubmitButton</td>
+<td><code>boolean</code></td>
+<td>Hides submit button if <code>true</code>.</td>
+</tr>
+<tr>
+<td>submitLabel</td>
+<td><code>string | latex</code></td>
+<td>A label for the submit button.</td>
+</tr>
+<tr>
+<td>warning</td>
+<td><code>string</code></td>
+<td>Puts a warning on the teacher dashboard associated with the student.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>choiceContent</td>
+<td><code>string</code></td>
+<td>The content for the choice of index <code>index</code></td>
+</tr>
+<tr>
+<td>explainContent</td>
+<td><code>string</code></td>
+<td>The current content of the "Explain your thinking" box</td>
+</tr>
+<tr>
+<td>isSelected</td>
+<td><code>boolean</code></td>
+<td>Whether the choice at index <code>choiceIndex</code> is selected.</td>
+</tr>
+<tr>
+<td>isSelectedList</td>
+<td><code>List&lt;boolean&gt;</code></td>
+<td>Boolean list indicating which selections are selected.</td>
+</tr>
+<tr>
+<td>matchesKey</td>
+<td><code>boolean</code></td>
+<td>Returns <code>true</code> if the current answer matches a provided answer key.</td>
+</tr>
+<tr>
+<td>submitCount</td>
+<td><code>number</code></td>
+<td>The number of submissions the student has made.</td>
+</tr>
+<tr>
+<td>submitted</td>
+<td><code>boolean</code></td>
+<td><code>true</code> if the component is submitted</td>
+</tr>
+<tr>
+<td>timeSinceSubmit</td>
+<td><code>number</code></td>
+<td>Returns number of seconds since submit button was pressed. Can take one parameter <code>maxTime</code>, and will use this as a ceiling for its output value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ordered-list">Ordered List<a class="headerlink" href="#ordered-list" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>correct</td>
+<td><code>boolean</code></td>
+<td>Displays a checkmark in the student summary screen if <code>true</code></td>
+</tr>
+<tr>
+<td>hidden</td>
+<td><code>boolean</code></td>
+<td>Hides the component when <code>true</code></td>
+</tr>
+<tr>
+<td>initialOrder</td>
+<td><code>List&lt;number&gt;</code></td>
+<td>Defines the initial ordering of the items. Orders items based on the order of the numbers in the list (integers not necessary)</td>
+</tr>
+<tr>
+<td>itemContent(index::number)</td>
+<td><code>string</code></td>
+<td>Sets the content of item at <code>index</code>.</td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td>warning</td>
+<td><code>string</code></td>
+<td>Puts a warning on the teacher dashboard associated with the student.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indexOfItem</td>
+<td><code>number</code></td>
+<td>Returns the resulting index of an item that started at <code>initialItemIndex</code></td>
+</tr>
+<tr>
+<td>itemAtIndex</td>
+<td><code>number</code></td>
+<td>Returns the initial index of the item that ended up at <code>itemIndex</code>.</td>
+</tr>
+<tr>
+<td>matchesKey</td>
+<td><code>boolean</code></td>
+<td>Returns <code>true</code> if the current answer matches a provided answer key.</td>
+</tr>
+<tr>
+<td>order</td>
+<td><code>List&lt;number&gt;</code></td>
+<td>List of indexs where items currently are</td>
+</tr>
+<tr>
+<td>textAtIndex</td>
+<td><code>string</code></td>
+<td>The text at index <code>itemIndex</code>.</td>
+</tr>
+<tr>
+<td>timeSinceSubmit</td>
+<td><code>number</code></td>
+<td>Returns number of seconds since submit button was pressed. Can take one parameter <code>maxTime</code>, and will use this as a ceiling for its output value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sketch">Sketch<a class="headerlink" href="#sketch" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="media">Media<a class="headerlink" href="#media" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="action-button">Action Button<a class="headerlink" href="#action-button" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="polypad">Polypad<a class="headerlink" href="#polypad" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../types/" class="btn btn-neutral float-left" title="Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lists/" class="btn btn-neutral float-right" title="Lists">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../types/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../lists/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/cl_syntax.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+      <script src="../assets/editor/editor.js"></script>
+      <script src="../js/editor_mount.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

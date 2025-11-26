@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Patterns - The Unofficial Desmos CL Reference</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/tables.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Patterns";
+        var mkdocs_page_input_path = "patterns.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> The Unofficial Desmos CL Reference
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../syntax-intro/">Basic Syntax</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../components/">Components</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../lists/">Lists</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Patterns</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#brief-introduction">Brief Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-patterns">Generating Patterns</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pattern-playground">Pattern Playground</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kinds-of-patterns">Kinds of Patterns</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#patternnumber">pattern.number</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patterninteger">pattern.integer</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_1">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_1">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternmixednumber">pattern.mixedNumber</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_2">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_2">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternscientific">pattern.scientific</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_3">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_3">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternliteral">pattern.literal</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_4">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_4">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternexpression">pattern.expression</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_5">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_5">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternanyof">pattern.anyOf</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_6">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_6">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternsum">pattern.sum</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_7">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_7">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patterncontains">pattern.contains</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_8">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_8">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternproduct">pattern.product</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_9">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_9">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternjuxt">pattern.juxt</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_10">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_10">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternfraction">pattern.fraction</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_11">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_11">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patterndivision">pattern.division</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_12">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_12">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternradical">pattern.radical</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_13">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_13">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternoverline">pattern.overLine</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternoverarc">pattern.overArc</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternoverrightarrow">pattern.overRightArrow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternoverleftarrow">pattern.overLeftArrow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patterndifference">pattern.difference</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_14">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_14">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternrepeat">pattern.repeat</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternoptional">pattern.optional</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternfunctioncall">pattern.functionCall</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternprime">pattern.prime</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternexponent">pattern.exponent</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pattern-attributes_15">Pattern Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#match-attributes_15">Match Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patterncomparator">pattern.comparator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patterncomparatorchain">pattern.comparatorChain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#patternsymbol">pattern.symbol</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">The Unofficial Desmos CL Reference</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Documentation</li>
+      <li class="breadcrumb-item active">Patterns</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="patterns">Patterns<a class="headerlink" href="#patterns" title="Permanent link">#</a></h1>
+<p>The official documentation on patterns can be found <a href="https://classroom.amplify.com/computation-layer/documentation#interpreting-math">here</a>.</p>
+<blockquote>
+<p><strong>WARNING</strong>: Patterns are currently a beta feature, so be careful while using them. For advanced pattern usage, take a look at the Desmos CL forums <a href="https://cl.desmos.com">here</a>.</p>
+</blockquote>
+<h2 id="brief-introduction">Brief Introduction<a class="headerlink" href="#brief-introduction" title="Permanent link">#</a></h2>
+<p>The different patterns in Desmos CL are tools which can be used to require student answers in certain formats or to parse complex student inputs. Some of these patterns can themselves contain other patterns, like the <code>fraction</code> pattern which requires a pattern for the numerator and denominator.</p>
+<h3 id="generating-patterns">Generating Patterns<a class="headerlink" href="#generating-patterns" title="Permanent link">#</a></h3>
+<p>I personally think that examples are the best way to learn the peculiar format for defining patterns. Let's say that we want to make a pattern that matches a basic fraction in the format \(\frac{a}{b}\). We could define that as:</p>
+<pre class="highlight"><code class="language-desmoscl">frac_pattern = patterns.fraction(patterns.number, patterns.number)</code></pre>
+<p>Then, let's say that students are putting their answer (as a fraction) into a math response component named <code>math_resp</code>. Then we could get the numerator of their response with:</p>
+<pre class="highlight"><code class="language-desmoscl">frac_pattern.parse(math_resp.latex).numerator().latex</code></pre>
+<p>The <code>parse</code> method parses the student response and returns an object which we can get the numerator, denominator, or latex from. Note that each pattern object will have different things you can parse out of it (fractions have numerators and denominators, exponents have bases and exponents, etc.).</p>
+<p>For a more complex pattern example, let's say that we gave our students the challenge of converting \(\left(\frac{a}{b}\right)^5\) into a fraction, with an expected answer of \(\frac{a^5}{b^5}\). This would correspond to the following pattern. Note that we can assign <code>patterns</code> to a shorthand variable to reduce the size of our pattern definition.</p>
+<pre class="highlight"><code class="language-desmoscl">p = patterns
+ans_pattern = p.fraction(p.exponent(p.literal("a"), p.integer), p.exponent(p.literal("b"), p.integer))</code></pre>
+<p>Now that we have the answer, we can first check <em>that</em> the student answer is in this format. To do this, we would use <code>matches</code> like so:</p>
+<pre class="highlight"><code class="language-desmoscl">ans_matches = ans_pattern.matches(math_resp.latex)</code></pre>
+<p>Once we've checked that, we can confirm that the exponents are correct by using multiple applications of <code>parse</code> like so:</p>
+<pre class="highlight"><code class="language-desmoscl">a_exp = ans_pattern.parse(math_resp.latex).numerator().exponent().numericValue
+b_exp = ans_pattern.parse(math_resp.latex).denominator().exponent().numericValue
+
+is_correct = (a_exp = 5) and (b_exp = 5)</code></pre>
+<h3 id="pattern-playground">Pattern Playground<a class="headerlink" href="#pattern-playground" title="Permanent link">#</a></h3>
+<p>If you want to play around with the different patterns that are possible, below you can find a kind of "pattern playground" which will render the latex that corresponds to the kind of pattern you are constructing. Note that "patterns." or "p." both work as prefixes, though only "patterns." will work as a prefix in the CL editor (unless you've included the line <code>p = patterns</code>). Additionally, this playground only includes a set of the more common patterns (the ones with explanations currently in this documentation).</p>
+<p><strong>Input your pattern here:</strong></p>
+<div data-editor="codemirror" style="border-style:solid; border-color:grey"></div>
+
+<p><strong>Pattern Preview</strong></p>
+<div data-math="output"></div>
+
+<p><strong>Pattern Warnings</strong></p>
+<div data-math="error" style="color:red; padding-top:.5rem;"></div>
+
+<h2 id="kinds-of-patterns">Kinds of Patterns<a class="headerlink" href="#kinds-of-patterns" title="Permanent link">#</a></h2>
+<h3 id="patternnumber">pattern.number<a class="headerlink" href="#patternnumber" title="Permanent link">#</a></h3>
+<h4 id="pattern-attributes">Pattern Attributes<a class="headerlink" href="#pattern-attributes" title="Permanent link">#</a></h4>
+<p><code>numberPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>satisfies(ltx::latex)</code></td>
+<td><code>numberPattern</code></td>
+<td><code>ltx</code> should be some expression containing the variable <code>x</code> which evaluates to either <code>true</code> or <code>false</code>. For example, the following will match only to negative integers:<br/><pre class="desmoscl"><code><br/>neg_int = patterns.integer.satisfies(`x &lt; 0`)<br/></code></pre></td>
+</tr>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>numberPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>numberPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>numberPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes">Match Attributes<a class="headerlink" href="#match-attributes" title="Permanent link">#</a></h4>
+<p><code>numberPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numericValue</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patterninteger">pattern.integer<a class="headerlink" href="#patterninteger" title="Permanent link">#</a></h3>
+<h4 id="pattern-attributes_1">Pattern Attributes<a class="headerlink" href="#pattern-attributes_1" title="Permanent link">#</a></h4>
+<p><code>numberPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>satisfies(ltx::latex)</code></td>
+<td><code>numberPattern</code></td>
+<td><code>ltx</code> should be some expression containing the variable <code>x</code> which evaluates to either <code>true</code> or <code>false</code>. For example, the following will match only to negative integers:<br/><pre class="desmoscl"><code><br/>neg_int = patterns.integer.satisfies(`x &lt; 0`)<br/></code></pre></td>
+</tr>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>numberPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>numberPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>numberPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_1">Match Attributes<a class="headerlink" href="#match-attributes_1" title="Permanent link">#</a></h4>
+<p><code>numberPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numericValue</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternmixednumber">pattern.mixedNumber<a class="headerlink" href="#patternmixednumber" title="Permanent link">#</a></h3>
+<h4 id="pattern-attributes_2">Pattern Attributes<a class="headerlink" href="#pattern-attributes_2" title="Permanent link">#</a></h4>
+<p><code>mixedNumberPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>mixedNumberPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_2">Match Attributes<a class="headerlink" href="#match-attributes_2" title="Permanent link">#</a></h4>
+<p><code>mixedNumberPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numericValue</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>whole</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>numerator</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>denominator</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternscientific">pattern.scientific<a class="headerlink" href="#patternscientific" title="Permanent link">#</a></h3>
+<h4 id="pattern-attributes_3">Pattern Attributes<a class="headerlink" href="#pattern-attributes_3" title="Permanent link">#</a></h4>
+<p><code>scientificPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>scientificPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_3">Match Attributes<a class="headerlink" href="#match-attributes_3" title="Permanent link">#</a></h4>
+<p><code>scientificPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numericValue</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>coefficient</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>exponent</code></td>
+<td><code>number</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternliteral">pattern.literal<a class="headerlink" href="#patternliteral" title="Permanent link">#</a></h3>
+<p><code>patterns.literal(ltx::latex)::literalPattern</code></p>
+<h4 id="pattern-attributes_4">Pattern Attributes<a class="headerlink" href="#pattern-attributes_4" title="Permanent link">#</a></h4>
+<p><code>literalPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>literalPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>literalPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>literalPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_4">Match Attributes<a class="headerlink" href="#match-attributes_4" title="Permanent link">#</a></h4>
+<p><code>literalPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternexpression">pattern.expression<a class="headerlink" href="#patternexpression" title="Permanent link">#</a></h3>
+<h4 id="pattern-attributes_5">Pattern Attributes<a class="headerlink" href="#pattern-attributes_5" title="Permanent link">#</a></h4>
+<p><code>expressionPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>expressionPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>expressionPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>expressionPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_5">Match Attributes<a class="headerlink" href="#match-attributes_5" title="Permanent link">#</a></h4>
+<p><code>expressionPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternanyof">pattern.anyOf<a class="headerlink" href="#patternanyof" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.anyOf(term1::pattern, term2::pattern, ...)::orPattern</code></pre>
+<p><code>anyOf</code> accepts any number of terms, and will match any of them.</p>
+<h4 id="pattern-attributes_6">Pattern Attributes<a class="headerlink" href="#pattern-attributes_6" title="Permanent link">#</a></h4>
+<p><code>orPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>orPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_6">Match Attributes<a class="headerlink" href="#match-attributes_6" title="Permanent link">#</a></h4>
+<p><code>orPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternsum">pattern.sum<a class="headerlink" href="#patternsum" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.sum(term1::pattern, term2::pattern, ...)::sumPattern</code></pre>
+<p><code>sum</code> accepts any number of terms, and will match their addition.</p>
+<h4 id="pattern-attributes_7">Pattern Attributes<a class="headerlink" href="#pattern-attributes_7" title="Permanent link">#</a></h4>
+<p><code>sumPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>sumPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>strictOrder</code></td>
+<td><code>sumPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>sumPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>sumPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectNegativeTerms</code></td>
+<td><code>sumPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowNegativeTerms</code></td>
+<td><code>sumPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_7">Match Attributes<a class="headerlink" href="#match-attributes_7" title="Permanent link">#</a></h4>
+<p><code>sumPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>termX</code></td>
+<td><code>patternMatch</code></td>
+<td>where <code>X</code> is the index of a term in the <code>patterns.sum</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the sum, one would call:<br/><pre class="desmoscl"><code><br/>patterns.sum(patterns.integer, patterns.integer).parse(`1+2`).term1<br/></code></pre></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patterncontains">pattern.contains<a class="headerlink" href="#patterncontains" title="Permanent link">#</a></h3>
+<h4 id="pattern-attributes_8">Pattern Attributes<a class="headerlink" href="#pattern-attributes_8" title="Permanent link">#</a></h4>
+<p><code>containsPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>containsPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_8">Match Attributes<a class="headerlink" href="#match-attributes_8" title="Permanent link">#</a></h4>
+<p><code>containsPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>term1</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternproduct">pattern.product<a class="headerlink" href="#patternproduct" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.product(term1::pattern, term2::pattern, ...)::productPattern</code></pre>
+<p><code>product</code> accepts any number of terms, and will match their product.</p>
+<h4 id="pattern-attributes_9">Pattern Attributes<a class="headerlink" href="#pattern-attributes_9" title="Permanent link">#</a></h4>
+<p><code>productPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>productPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>strictOrder</code></td>
+<td><code>productPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>productPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>productPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_9">Match Attributes<a class="headerlink" href="#match-attributes_9" title="Permanent link">#</a></h4>
+<p><code>productPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>termX</code></td>
+<td><code>patternMatch</code></td>
+<td>where <code>X</code> is the index of a term in the <code>patterns.product</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the product, one would call:<br/><pre class="desmoscl"><code><br/>patterns.product(patterns.integer, patterns.integer).parse(`1*2`).term1<br/></code></pre></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternjuxt">pattern.juxt<a class="headerlink" href="#patternjuxt" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.juxt(term1::pattern, term2::pattern, ...)::juxtPattern</code></pre>
+<p><code>juxt</code> accepts any number of terms, and will match their juxtaposition.</p>
+<p><strong>WARNING</strong>: <code>juxt</code> will not recognize the juxtaposition of two numbers (as these are often parsed as a single number) and in general is not completely intuitive. Make sure to test thoroughly when using this feature.</p>
+<h4 id="pattern-attributes_10">Pattern Attributes<a class="headerlink" href="#pattern-attributes_10" title="Permanent link">#</a></h4>
+<p><code>juxtPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>juxtPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>strictOrder</code></td>
+<td><code>juxtPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>juxtPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>juxtPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_10">Match Attributes<a class="headerlink" href="#match-attributes_10" title="Permanent link">#</a></h4>
+<p><code>juxtPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>termX</code></td>
+<td><code>patternMatch</code></td>
+<td>where <code>X</code> is the index of a term in the <code>patterns.juxt</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the juxt, one would call:<br/><pre class="desmoscl"><code><br/>patterns.juxt(patterns.integer, patterns.literal(`x`)).parse(`1x`).term1<br/></code></pre></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternfraction">pattern.fraction<a class="headerlink" href="#patternfraction" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.fraction(numerator::pattern, denominator::pattern)::fractionPattern</code></pre>
+<h4 id="pattern-attributes_11">Pattern Attributes<a class="headerlink" href="#pattern-attributes_11" title="Permanent link">#</a></h4>
+<p><code>fractionPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>fractionPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>fractionPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>fractionPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_11">Match Attributes<a class="headerlink" href="#match-attributes_11" title="Permanent link">#</a></h4>
+<p><code>fractionPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>numerator</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>denominator</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patterndivision">pattern.division<a class="headerlink" href="#patterndivision" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.division(dividend::pattern, divisor::pattern)::divisionPattern</code></pre>
+<h4 id="pattern-attributes_12">Pattern Attributes<a class="headerlink" href="#pattern-attributes_12" title="Permanent link">#</a></h4>
+<p><code>divisionPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>divisionPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>divisionPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>divisionPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_12">Match Attributes<a class="headerlink" href="#match-attributes_12" title="Permanent link">#</a></h4>
+<p><code>divisionPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>divisor</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>dividend</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternradical">pattern.radical<a class="headerlink" href="#patternradical" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.radical(radicand::pattern, degree::pattern)::radicalPattern</code></pre>
+<h4 id="pattern-attributes_13">Pattern Attributes<a class="headerlink" href="#pattern-attributes_13" title="Permanent link">#</a></h4>
+<p><code>radicalPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>radicalPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>radicalPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>radicalPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_13">Match Attributes<a class="headerlink" href="#match-attributes_13" title="Permanent link">#</a></h4>
+<p><code>radicalPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>radicand</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>degree</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternoverline">pattern.overLine<a class="headerlink" href="#patternoverline" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternoverarc">pattern.overArc<a class="headerlink" href="#patternoverarc" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternoverrightarrow">pattern.overRightArrow<a class="headerlink" href="#patternoverrightarrow" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternoverleftarrow">pattern.overLeftArrow<a class="headerlink" href="#patternoverleftarrow" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patterndifference">pattern.difference<a class="headerlink" href="#patterndifference" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.difference(minuend::pattern, subtrahend::pattern)::pattern</code></pre>
+<h4 id="pattern-attributes_14">Pattern Attributes<a class="headerlink" href="#pattern-attributes_14" title="Permanent link">#</a></h4>
+<p><code>differencePattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>differencePatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>differencePattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>differencePattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_14">Match Attributes<a class="headerlink" href="#match-attributes_14" title="Permanent link">#</a></h4>
+<p><code>differencePatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>minuend</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>subtrahend</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patternrepeat">pattern.repeat<a class="headerlink" href="#patternrepeat" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternoptional">pattern.optional<a class="headerlink" href="#patternoptional" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternfunctioncall">pattern.functionCall<a class="headerlink" href="#patternfunctioncall" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternprime">pattern.prime<a class="headerlink" href="#patternprime" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternexponent">pattern.exponent<a class="headerlink" href="#patternexponent" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-desmoscl">patterns.exponent(base::pattern, exponent::pattern)::exponentPattern</code></pre>
+<h4 id="pattern-attributes_15">Pattern Attributes<a class="headerlink" href="#pattern-attributes_15" title="Permanent link">#</a></h4>
+<p><code>exponentPattern</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches(ltx::latex)</code></td>
+<td><code>boolean</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>parse(ltx::latex)</code></td>
+<td><code>exponentPatternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>rejectParens</code></td>
+<td><code>exponentPattern</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>allowParens</code></td>
+<td><code>exponentPattern</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="match-attributes_15">Match Attributes<a class="headerlink" href="#match-attributes_15" title="Permanent link">#</a></h4>
+<p><code>exponentPatternMatch</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>latex</code></td>
+<td><code>latex</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>base</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+<tr>
+<td><code>exponent</code></td>
+<td><code>patternMatch</code></td>
+<td>Description needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patterncomparator">pattern.comparator<a class="headerlink" href="#patterncomparator" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patterncomparatorchain">pattern.comparatorChain<a class="headerlink" href="#patterncomparatorchain" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+<h3 id="patternsymbol">pattern.symbol<a class="headerlink" href="#patternsymbol" title="Permanent link">#</a></h3>
+<p>Description Needed</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../lists/" class="btn btn-neutral float-left" title="Lists"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../lists/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/cl_syntax.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+      <script src="../assets/editor/editor.js"></script>
+      <script src="../js/editor_mount.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

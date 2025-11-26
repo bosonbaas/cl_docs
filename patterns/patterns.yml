@@ -1,0 +1,139 @@
+number:
+  usage: ""
+  patternType: numberPattern
+  matchType: numberPatternMatch
+
+integer:
+  usage: ""
+  patternType: numberPattern
+  matchType: numberPatternMatch
+
+mixedNumber:
+  usage: ""
+  patternType: mixedNumberPattern
+  matchType: mixedNumberPatternMatch
+
+scientific:
+  usage: ""
+  patternType: scientificPattern
+  matchType: scientificPatternMatch
+
+literal:
+  usage: |
+    `patterns.literal(ltx::latex)::literalPattern`
+  patternType: literalPattern
+  matchType: literalPatternMatch
+
+expression:
+  usage: ""
+  patternType: expressionPattern
+  matchType: expressionPatternMatch
+
+anyOf:
+  usage: |
+    ```desmoscl
+    patterns.anyOf(term1::pattern, term2::pattern, ...)::orPattern
+    ```
+  description: |
+    `anyOf` accepts any number of terms, and will match any of them.
+  patternType: orPattern
+  matchType: orPatternMatch
+
+sum:
+  usage: |
+    ```desmoscl
+    patterns.sum(term1::pattern, term2::pattern, ...)::sumPattern
+    ```
+  description: |
+    `sum` accepts any number of terms, and will match their addition.
+  patternType: sumPattern
+  matchType: sumPatternMatch
+
+contains:
+  usage: ""
+  patternType: containsPattern
+  matchType: containsPatternMatch
+
+product:
+  usage: |
+    ```desmoscl
+    patterns.product(term1::pattern, term2::pattern, ...)::productPattern
+    ```
+  description: |
+    `product` accepts any number of terms, and will match their product.
+  patternType: productPattern
+  matchType: productPatternMatch
+
+juxt:
+  usage: |
+    ```desmoscl
+    patterns.juxt(term1::pattern, term2::pattern, ...)::juxtPattern
+    ```
+  description: |
+    `juxt` accepts any number of terms, and will match their juxtaposition.
+
+    **WARNING**: `juxt` will not recognize the juxtaposition of two numbers (as these are often parsed as a single number) and in general is not completely intuitive. Make sure to test thoroughly when using this feature.
+  patternType: juxtPattern
+  matchType: juxtPatternMatch
+
+fraction:
+  usage: |
+    ```desmoscl
+    patterns.fraction(numerator::pattern, denominator::pattern)::fractionPattern
+    ```
+  patternType: fractionPattern
+  matchType: fractionPatternMatch
+
+division:
+  usage: |
+    ```desmoscl
+    patterns.division(dividend::pattern, divisor::pattern)::divisionPattern
+    ```
+  patternType: divisionPattern
+  matchType: divisionPatternMatch
+
+radical:
+  usage: |
+    ```desmoscl
+    patterns.radical(radicand::pattern, degree::pattern)::radicalPattern
+    ```
+  patternType: radicalPattern
+  matchType: radicalPatternMatch
+
+overLine:
+
+overArc:
+
+overRightArrow:
+
+overLeftArrow:
+
+difference:
+  usage: |
+    ```desmoscl
+    patterns.difference(minuend::pattern, subtrahend::pattern)::pattern
+    ```
+  patternType: differencePattern
+  matchType: differencePatternMatch
+
+repeat:
+
+optional:
+
+functionCall:
+
+prime:
+
+exponent:
+  usage: |
+    ```desmoscl
+    patterns.exponent(base::pattern, exponent::pattern)::exponentPattern
+    ```
+  patternType: exponentPattern
+  matchType: exponentPatternMatch
+
+comparator:
+
+comparatorChain:
+
+symbol:

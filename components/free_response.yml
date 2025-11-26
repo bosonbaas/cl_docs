@@ -1,0 +1,40 @@
+sinks:
+  initialText:
+    type: "string | latex"
+    desc: "Initial text of the free response. Often a prompt for student input."
+  placeholderText:
+    type: "string | latex"
+    desc: "Placeholder text of the free response. (default value of response)"
+  showSubmitButton:
+    type: "boolean"
+    desc: "Hides submit button if `true`."
+  submitDisabled:
+    type: "boolean"
+    desc: "Disables the submit button if `false`."
+  submitLabel:
+    type: "string | latex"
+    desc: "A label for the submit button."
+  hidden:
+    type: "boolean"
+    desc: "Hides the component when `true`"
+
+hiddenSinks:
+  WOTS:
+  export:
+  exportNumber:
+  exportString:
+  exportNumberList:
+  exportNumberArtifact:
+  exportStringArtifact:
+  exportRichTextArtifact:
+
+sources:
+  content:
+    type: "string"
+    desc: "The current entered content."
+  submitted:
+    type: "boolean"
+    desc: "`true` if the component is submitted"
+  timeSinceSubmit:
+    type: "number"
+    desc: "Returns number of seconds since submit button was pressed. Can take one parameter `maxTime`, and will use this as a ceiling for its output value."
