@@ -154,7 +154,15 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">#</a></h1>
-<p>Lists in CL can be explicitly defined by providing a comma-separated list of elements. Note, all elements of a list in CL must be of the <em>same</em> datatype. Elements of lists can be lists themselves but, once again, they must all be the same <em>type</em> of list. For example, we can define a list of <code>number</code>s</p>
+<p>Lists in CL can be explicitly defined by providing a comma-separated list of elements. Note, all elements of a list in CL must be of the <em>same</em> datatype. Elements of lists can be lists themselves but, once again, they must all be the same <em>type</em> of list. For example, we can define a list of <code>number</code>s as:</p>
+<pre><code class="language-desmoscl">num_list = [1, 2, 3, 4]
+</code></pre>
+<p>but we would run into an error if we tried to add a string onto it like</p>
+<pre><code class="language-desmoscl">num_list = [1, 2, 3, 4, &quot;a&quot;]
+</code></pre>
+<blockquote>
+<p><strong>WARNING</strong>: Lists operations are currently a beta feature, so be careful while using them. For advanced list usage, take a look at the Desmos CL forums <a href="https://cl.desmos.com">here</a>.</p>
+</blockquote>
 <h2 id="list-operations">List Operations<a class="headerlink" href="#list-operations" title="Permanent link">#</a></h2>
 <p>List operations are described in-detail <a href="https://cl.desmos.com/t/list-functions-in-cl/7353">here</a>. Below is a cheat-sheet, as well as some worked examples I've found useful.</p>
 <p>As a note, the first few of these functions take in an <strong>arrow function</strong> as an argument. Arrow functions are functions which <em>you</em> define, and which (in CL) can only be defined <em>inline</em> (that is, in the function call itself). An example of an arrow function is:</p>
@@ -219,7 +227,7 @@ list_3 = list_1.map((x, i) =&gt; numericValue(`$(x) * $(list_2[i])))
 </ul>
 <h4 id="use-cases_2">Use-Cases<a class="headerlink" href="#use-cases_2" title="Permanent link">#</a></h4>
 <ul>
-<li>Find the first value greater than 2 in a list. <sup id="fnref:6357"><a class="footnote-ref" href="#fn:6357">1</a></sup></li>
+<li>Find the first value greater than 2 in a list. <sup id="fnref:2762"><a class="footnote-ref" href="#fn:2762">1</a></sup></li>
 </ul>
 <pre><code class="language-desmoscl">values = [1,3,5,6,7]
 
@@ -236,7 +244,7 @@ first_gt_2 = values.first((e) =&gt; e &gt; 2)
 </ul>
 <h4 id="use-cases_3">Use-Cases<a class="headerlink" href="#use-cases_3" title="Permanent link">#</a></h4>
 <ul>
-<li>Evaluate if all elements of a list are greater than 2 <sup id="fnref2:6357"><a class="footnote-ref" href="#fn:6357">1</a></sup></li>
+<li>Evaluate if all elements of a list are greater than 2 <sup id="fnref2:2762"><a class="footnote-ref" href="#fn:2762">1</a></sup></li>
 </ul>
 <pre><code class="language-desmoscl">values = [1,3,5,6,7]
 
@@ -253,7 +261,7 @@ all_gt_2 = values.all((e) =&gt; e &gt; 2)
 </ul>
 <h4 id="use-cases_4">Use-Cases<a class="headerlink" href="#use-cases_4" title="Permanent link">#</a></h4>
 <ul>
-<li>Evaluate if any elements of a list are greater than 2 <sup id="fnref3:6357"><a class="footnote-ref" href="#fn:6357">1</a></sup></li>
+<li>Evaluate if any elements of a list are greater than 2 <sup id="fnref3:2762"><a class="footnote-ref" href="#fn:2762">1</a></sup></li>
 </ul>
 <pre><code class="language-desmoscl">values = [1,3,5,6,7]
 
@@ -301,7 +309,7 @@ first_values = values.slice(1, numericValue(&quot;${values.length} / 2&quot;))
 <p><code>join</code> returns the result of appending <code>list2</code> to <code>list</code>.</p>
 <h4 id="use-cases_7">Use-Cases<a class="headerlink" href="#use-cases_7" title="Permanent link">#</a></h4>
 <ul>
-<li>Merging two lists together. <sup id="fnref4:6357"><a class="footnote-ref" href="#fn:6357">1</a></sup></li>
+<li>Merging two lists together. <sup id="fnref4:2762"><a class="footnote-ref" href="#fn:2762">1</a></sup></li>
 </ul>
 <pre><code class="language-desmoscl">v1 = [1, 3, 4]
 v2 = [6, 5, 2]
@@ -314,7 +322,7 @@ values = v1.join(v2)
 <p><code>reverse</code> returns a copy of <code>list</code> in reversed order.</p>
 <h4 id="use-cases_8">Use-Cases<a class="headerlink" href="#use-cases_8" title="Permanent link">#</a></h4>
 <ul>
-<li>Reversing a list. <sup id="fnref5:6357"><a class="footnote-ref" href="#fn:6357">1</a></sup></li>
+<li>Reversing a list. <sup id="fnref5:2762"><a class="footnote-ref" href="#fn:2762">1</a></sup></li>
 </ul>
 <pre><code class="language-desmoscl">values = [1, 3, 4, 6, 5, 2]
 rev_values = v1.join(v2)
@@ -328,7 +336,7 @@ range(upper::number)::List&lt;number&gt;
 <p>Returns a list which starts at <code>lower</code> and counts up to <code>upper</code> with step sizes of size <code>step</code>. If <code>step</code> is not specificied, it defaults to 1. If <code>lower</code> is not specificied, it defaults to 1. If the step size is negative, it will count backwards from <code>lower</code> to <code>upper</code> (in this case, <code>lower</code> will need to be greater than <code>upper</code>). This will return <code>undefined</code> if <code>step</code> is not a nonzero integer.</p>
 <h4 id="use-cases_9">Use-Cases<a class="headerlink" href="#use-cases_9" title="Permanent link">#</a></h4>
 <ul>
-<li>Creating a list of evenly spaced numbers. <sup id="fnref6:6357"><a class="footnote-ref" href="#fn:6357">1</a></sup></li>
+<li>Creating a list of evenly spaced numbers. <sup id="fnref6:2762"><a class="footnote-ref" href="#fn:2762">1</a></sup></li>
 </ul>
 <pre><code class="language-desmoscl">r1 = range(5)
 # r1 is [1, 2, 3, 4, 5]
@@ -342,8 +350,8 @@ r4 = range(5, 2, -2)
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:6357">
-<p>Add a more compelling example here. Want to contribute? See the <a href="../#contributing">Contribution section</a>&#160;<a class="footnote-backref" href="#fnref:6357" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6357" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:6357" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:6357" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:6357" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:6357" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:2762">
+<p>Add a more compelling example here. Want to contribute? See the <a href="../#contributing">Contribution section</a>&#160;<a class="footnote-backref" href="#fnref:2762" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2762" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2762" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2762" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:2762" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:2762" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
