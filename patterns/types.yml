@@ -374,6 +374,7 @@ sumPatternMatch:
       ```desmoscl
       patterns.sum(patterns.integer, patterns.integer).parse(`1+2`).term1
       ```
+      Note: Since strict order is by default not enforced, `X` is the index of the matching pattern, not necessarily of the value in the expression.
 
 productPattern:
   matches:
@@ -416,6 +417,7 @@ productPatternMatch:
       ```desmoscl
       patterns.product(patterns.integer, patterns.integer).parse(`1*2`).term1
       ```
+      Note: Since strict order is by default not enforced, `X` is the index of the matching pattern, not necessarily of the value in the expression.
 
 juxtPattern:
   matches:
@@ -458,6 +460,7 @@ juxtPatternMatch:
       ```desmoscl
       patterns.juxt(patterns.integer, patterns.literal(`x`)).parse(`1x`).term1
       ```
+      Note: Since strict order is by default not enforced, `X` is the index of the matching pattern, not necessarily of the value in the expression.
 
 containsPattern:
   matches:

@@ -755,7 +755,7 @@ is_correct = (a_exp = 5) and (b_exp = 5)
 <tr>
 <td><code>termX</code></td>
 <td><code>patternMatch</code></td>
-<td>where <code>X</code> is the index of a term in the <code>patterns.sum</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the sum, one would call:<br/><pre class="desmoscl"><code><br/>patterns.sum(patterns.integer, patterns.integer).parse(`1+2`).term1<br/></code></pre></td>
+<td>where <code>X</code> is the index of a term in the <code>patterns.sum</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the sum, one would call:<br/><pre class="desmoscl"><code><br/>patterns.sum(patterns.integer, patterns.integer).parse(`1+2`).term1<br/></code></pre><br/>Note: Since strict order is by default not enforced, <code>X</code> is the index of the matching pattern, not necessarily of the value in the expression.</td>
 </tr>
 </tbody>
 </table>
@@ -867,7 +867,7 @@ is_correct = (a_exp = 5) and (b_exp = 5)
 <tr>
 <td><code>termX</code></td>
 <td><code>patternMatch</code></td>
-<td>where <code>X</code> is the index of a term in the <code>patterns.product</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the product, one would call:<br/><pre class="desmoscl"><code><br/>patterns.product(patterns.integer, patterns.integer).parse(`1*2`).term1<br/></code></pre></td>
+<td>where <code>X</code> is the index of a term in the <code>patterns.product</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the product, one would call:<br/><pre class="desmoscl"><code><br/>patterns.product(patterns.integer, patterns.integer).parse(`1*2`).term1<br/></code></pre><br/>Note: Since strict order is by default not enforced, <code>X</code> is the index of the matching pattern, not necessarily of the value in the expression.</td>
 </tr>
 </tbody>
 </table>
@@ -933,7 +933,7 @@ is_correct = (a_exp = 5) and (b_exp = 5)
 <tr>
 <td><code>termX</code></td>
 <td><code>patternMatch</code></td>
-<td>where <code>X</code> is the index of a term in the <code>patterns.juxt</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the juxt, one would call:<br/><pre class="desmoscl"><code><br/>patterns.juxt(patterns.integer, patterns.literal(`x`)).parse(`1x`).term1<br/></code></pre></td>
+<td>where <code>X</code> is the index of a term in the <code>patterns.juxt</code> call. This returns the patternMatch of the type of the indexed term. For example, to get the match for the first term of the juxt, one would call:<br/><pre class="desmoscl"><code><br/>patterns.juxt(patterns.integer, patterns.literal(`x`)).parse(`1x`).term1<br/></code></pre><br/>Note: Since strict order is by default not enforced, <code>X</code> is the index of the matching pattern, not necessarily of the value in the expression.</td>
 </tr>
 </tbody>
 </table>
